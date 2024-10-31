@@ -6,6 +6,7 @@ public class FirePlace {
     private boolean isLit;
     Slowprint slowprint = new Slowprint();
     Scanner scanner = new Scanner(System.in);
+    Spider spider = new Spider();
     int health = 3;
     int intelligence = 0;
 
@@ -54,7 +55,8 @@ public class FirePlace {
         slowprint.slowPrintln("You've decided to lit the fire.");
         intelligence += 1;
         slowprint.slowPrintln("You've also gotten a skillpoint for intelligence! " + "Unfortunally, you attracted spiders towards your position." ,50);
-        //Metod för att kalla på spindlar
+        slowprint.slowPrintln(spider.getDescription());
+
         
     }
     public void ifNotLit() {
