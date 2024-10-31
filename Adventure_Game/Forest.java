@@ -1,12 +1,21 @@
-package AdventureGame;
+package Adventure_Game;
 import java.util.Scanner;
 
-public class Forest extends Environment {
+public class Forest {
     public Forest(){
-        this.description = "" ; //Axels beskrivning
+        
+        FirePlace fireplace = new FirePlace();
+        fireplace.arrivalAtFirePlace(); //Skriv ut berättelse
+        fireplace.askToLit();
+
+        
+
     }
 
-        public void fire() {
+
+
+
+    /*   public void fire() {
         System.out.println(" Do you choose to make a fire [1] or not make a fire[2]?");  
         Scanner s = new Scanner(System.in);
         int choiceFire = s.nextInt();
@@ -21,8 +30,9 @@ public class Forest extends Environment {
             break;
         }
 
-    
-
-    
+     
 }
+*/
+
+
 }

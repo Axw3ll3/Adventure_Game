@@ -1,5 +1,9 @@
-package AdventureGame;
+package Adventure_Game;
 import java.util.Scanner;
+
+import Adventure_Game.Forest;
+
+import Adventure_Game.City;
 public class Menu {
 
     
@@ -39,13 +43,13 @@ public class Menu {
     switch(choiceCorF){
     case 1:
     City ci = new City();
-    System.out.println(ci.description);
+    System.out.println();
     break;
 
     case 2:
     Forest f = new Forest();
-    System.out.println(f.description);
-    f.fire();
+    System.out.println(f);
+    
     break;
 
     

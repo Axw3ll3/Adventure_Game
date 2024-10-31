@@ -36,6 +36,8 @@ public class FirePlace {
                         switch (choice) {
                             case 1:
                                 ifLit();
+                                Spider spider = new Spider();
+                                System.out.println(spider.getDescription());
                                 break;
         
                             case 2:
@@ -43,7 +45,7 @@ public class FirePlace {
                                 break;
                         
                         }
-                        
+                        break;
                     } 
                 }
 
