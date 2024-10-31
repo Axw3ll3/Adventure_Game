@@ -1,3 +1,4 @@
+package Adventure_Game;
 import java.util.Scanner;
 
 public class Player {
