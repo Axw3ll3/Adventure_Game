@@ -37,7 +37,8 @@ public class FirePlace {
                             case 1:
                                 ifLit();
                                 Spider spider = new Spider();
-                                System.out.println(spider.getDescription());
+                                Combat combat = new Combat();
+                                Combat.combat(strength, health, spider );
                                 break;
         
                             case 2:
