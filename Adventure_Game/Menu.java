@@ -5,7 +5,13 @@ import Adventure_Game.Forest;
 
 import Adventure_Game.City;
 public class Menu {
+public Menu(){
 
+}
+public void gameOver(){
+    System.out.println("-------------Results: -------------");
+    System.exit(0);
+}
     
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
