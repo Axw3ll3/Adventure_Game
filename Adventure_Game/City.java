@@ -6,6 +6,7 @@ public class City{
         Zombie zombie = new Zombie();
         Combat combat = new Combat();
         Scanner s = new Scanner(System.in);
+        System.out.println("------------------------------------------------------");
         System.out.println("You've arrived to the city");
         //zombie attack
         Policestation policestation = new Policestation(player);
