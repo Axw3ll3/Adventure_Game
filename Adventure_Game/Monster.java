@@ -1,4 +1,4 @@
-package monster;
+package Adventure_Game;
 
 public abstract class Monster {
     private int monsterStrenght;

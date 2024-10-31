@@ -1,4 +1,4 @@
-package monster;
+package Adventure_Game;
 
 public class Ratpack extends Monster {
     public Ratpack() {
