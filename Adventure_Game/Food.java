@@ -27,8 +27,8 @@ public class Food {
         int choice;
                 //Visar meny och hämtar användarens val.
                 while (true) {
-                    slowprint.slowPrintln("1. Yes");
-                    slowprint.slowPrintln("2. No");
+                    slowprint.slowPrintln("[1] Yes");
+                    slowprint.slowPrintln("[2] No");
         
                     // Kallar på metod för att se att input av användare är en integer
                    choice = checkChoice(scanner);
@@ -43,7 +43,7 @@ public class Food {
                                 break;
                         
                         }
-                        
+                       break; 
                     } 
                 }
     

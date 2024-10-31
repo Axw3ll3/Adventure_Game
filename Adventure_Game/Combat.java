@@ -7,6 +7,7 @@ public class Combat {
     private Random random = new Random();
     private Scanner sc = new Scanner(System.in);
     private int choice;
+    Slowprint slowprint = new Slowprint();
 
     public boolean checkSuccess(int playerStrenght, int monsterStrength){
         int strenghtDifference = playerStrenght - monsterStrength;

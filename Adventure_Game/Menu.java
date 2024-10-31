@@ -1,27 +1,33 @@
 package Adventure_Game;
 import java.util.Scanner;
-
-import Adventure_Game.Forest;
-
-import Adventure_Game.City;
 public class Menu {
-public Menu(){
+private Player player;
+
+public Menu(Player player){
+    this.player = player;
 
 }
 public void gameOver(){
     System.out.println("-------------Results: -------------");
+    System.out.println("Health: " + player.getHealth());
+    System.out.println("Strength: ");
+    System.out.println("Speed: ");
+    System.out.println("Intelligence: ");
     System.exit(0);
 }
-    
+//-----------------------------------------------MAIN --------------------------------------------------    
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.println("WELCOME TO THE ADVENTUREGAME BY VELVETVIBE");
         System.out.println("------------------------------------------");
         System.out.println("First we are going to start by creating your character");
-        System.out.println("Enter the name of the player: ");
-        String PlayerName = s.nextLine();
-        System.out.println("Welcome " + PlayerName + " !");
-        System.out.println("Your current skills are " ); //+KARAKTÄR EGENSKAPER
+        Player player = new Player("Default name");
+        player.setName(s);
+        System.out.println("Your current skills are: "); //+KARAKTÄR EGENSKAPER
+        System.out.println("Health: " + player.getHealth());
+        System.out.println("Strength: " );
+        System.out.println("Speed: ");
+        System.out.println("Intelligence: ");
         System.out.println("Press Enter to begin...");
         s.nextLine(); //Väntar tills user trycker på enter
         System.out.println("");//Här beskrivande text om hur karaktären vaknar upp på platsen
@@ -48,20 +54,19 @@ public void gameOver(){
      }
     switch(choiceCorF){
     case 1:
-    City ci = new City();
+    City ci = new City(player);
     System.out.println();
     break;
 
     case 2:
-    Forest f = new Forest();
-    System.out.println(f);
+    Forest f = new Forest(player);
+    City cit = new City(player);
+    System.out.println();
     
     break;
-
-    
     }
 
-
+System.out.println("Här är vi nu"); //ta bort sen
 
 
 

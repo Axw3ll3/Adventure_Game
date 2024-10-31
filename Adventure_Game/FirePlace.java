@@ -9,7 +9,7 @@ public class FirePlace {
     int health = 3;
     int intelligence = 0;
 
-    public FirePlace() {
+    public FirePlace(Player player) {
         this.isLit = false;
     }
 
@@ -38,7 +38,7 @@ public class FirePlace {
                                 ifLit();
                                 Spider spider = new Spider();
                                 Combat combat = new Combat();
-                                Combat.combat(strength, health, spider );
+                                //Combat.combat(getPlayerStrength, getPlayerHealth, spider);
                                 break;
         
                             case 2:

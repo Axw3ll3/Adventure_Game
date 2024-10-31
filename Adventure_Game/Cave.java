@@ -1,7 +1,8 @@
 package Adventure_Game;
 import java.util.Scanner;
 public class Cave {
-    public Cave(){
+    public Cave(Player player){
+        System.out.println("----------------------------------------------------------------------------------");
         System.out.println("Finally, after a long night, you come across an opening in a nearby mountainside.\n"
 + "It seems as if it's big enough to enter and it could really make as a good shelter\n"
 + "for the rest of the night. You don't hear anything inside, but as everything in\n"
