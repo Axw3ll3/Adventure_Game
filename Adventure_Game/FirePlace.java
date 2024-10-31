@@ -43,7 +43,7 @@ public class FirePlace {
                                 break;
                         
                         }
-                        
+                        break;
                     } 
                 }
 
