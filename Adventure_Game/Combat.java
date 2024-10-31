@@ -1,4 +1,4 @@
-package monster;
+package Adventure_Game;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -8,21 +8,21 @@ public class Combat {
     private Scanner sc = new Scanner(System.in);
     private int choice;
 
-    public boolean checkSuccess(int playerStrenght, int monsterStrenght){
-        int strenghtDifference = getPlayerStrenght - getMonsterStrenght;
+    public boolean checkSuccess(int playerStrenght, int monsterStrength){
+        int strenghtDifference = playerStrenght - monsterStrength;
                 
         double successChance;
-        if (strengthDifference == 0) {
+        if (strenghtDifference == 0) {
             successChance = 50.0;
-        } else if (strengthDifference == 1) {
+        } else if (strenghtDifference == 1) {
             successChance = 66.6;
-        } else if (strengthDifference == 2) {
+        } else if (strenghtDifference == 2) {
             successChance = 83.3;
-        } else if (strengthDifference == -1) {
+        } else if (strenghtDifference == -1) {
             successChance = 33.3;
-        } else if (strengthDifference == -2) {
+        } else if (strenghtDifference == -2) {
             successChance = 16.7;
-        } else if (strengthDifference > 2) {
+        } else if (strenghtDifference > 2) {
             successChance = 100.0;
         } else {
             successChance = 0.0;
@@ -35,8 +35,8 @@ public class Combat {
 
     public void combat(int getPlayerStrength, int getPlayerHealth, Monster monster) {
 
-        while (playerHealth > 0) {
-            boolean success = checkSuccess(getPlayerStrength, monster.getMonsterStrength);
+        while (getPlayerHealth > 0) {
+            boolean success = checkSuccess(getPlayerStrength, monster.getMonsterStrength());
 
             if (success) {
                 slowprint.slowPrintln(monster.getKilledByPlayer);
