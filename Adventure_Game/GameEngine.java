@@ -3,10 +3,10 @@ package Adventure_Game;
 public class GameEngine {
     public static void main(String[] args) {
         Slowprint slowprint = new Slowprint();
-        /*
+    
         FirePlace fire = new FirePlace();
-        fire.arrivalAtFirePlace();
-        */
+        //fire.arrivalAtFirePlace();
+        fire.ifLit();
         
         /*
         Food food = new Food();
@@ -18,9 +18,9 @@ public class GameEngine {
         puzzle.arrivalAtPuzzle();
         */
         
-        Riddle riddle = new Riddle();
+        //Riddle riddle = new Riddle();
         //riddle.arrivalAtRiddle();
-        riddle.questionAndChoice();
+        //riddle.questionAndChoice();
     
     }
     
