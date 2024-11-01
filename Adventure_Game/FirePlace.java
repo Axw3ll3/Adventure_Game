@@ -54,7 +54,7 @@ public class FirePlace {
         isLit = true;
         slowprint.slowPrintln("You've decided to lit the fire.");
         intelligence += 1;
-        slowprint.slowPrintln("You've also gotten a skillpoint for intelligence! " + "Unfortunally, you attracted spiders towards your position." ,50);
+        slowprint.slowPrintln("You've also gotten a skillpoint for intelligence! " + "Unfortunally, you attracted spiders towards your position.\n" ,50);
         slowprint.slowPrintln(spider.getDescription());
 
         
