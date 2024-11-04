@@ -59,7 +59,7 @@ public class FirePlace {
         Spider spider = new Spider();
         Combat combat = new Combat(player);
         spider.getDescription();
-        //combat.combat(player.getStrength(), player.getHealth(), spider);
+        combat.combat(player.getStrength(), player.getHealth(), spider);
         
     }
     public void ifNotLit() {

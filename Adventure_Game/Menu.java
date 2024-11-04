@@ -10,9 +10,9 @@ public Menu(Player player){
 public void gameOver(){
     System.out.println("-------------Results: -------------");
     System.out.println("Health: " + player.getHealth());
-    System.out.println("Strength: ");
-    System.out.println("Speed: ");
-    System.out.println("Intelligence: ");
+    System.out.println("Strength: "+player.getStrength());
+    System.out.println("Speed: "+ player.getSpeed());
+    System.out.println("Intelligence: "+ player.getIntelligence());
     System.exit(0);
 }
 //-----------------------------------------------MAIN --------------------------------------------------    

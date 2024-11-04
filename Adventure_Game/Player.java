@@ -86,7 +86,9 @@ public class Player {
 
      public void takeDamage(int damage) {
         this.health -= damage;
-        if (this.health < 0) this.health = 0;
+        if (this.health < 0) {
+            this.health = 0;
+        }
      }
 
      //metod för att öka i nivå

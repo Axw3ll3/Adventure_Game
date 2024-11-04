@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class City{
     public City(Player player){
         Zombie zombie = new Zombie();
-        Combat combat = new Combat();
+        Combat combat = new Combat(player);
         Scanner s = new Scanner(System.in);
         System.out.println("------------------------------------------------------");
         System.out.println("You've arrived to the city");

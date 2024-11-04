@@ -8,10 +8,10 @@ public class Combat {
     private Scanner sc = new Scanner(System.in);
     private int choice;
     Slowprint slowprint = new Slowprint();
-    Player player = new Player(null);
+    private Player player;
 
     public Combat (Player player) {
-        
+        this.player = player;
     }
 
     public boolean checkSuccess(int getStrength, int getMonsterStrength){
@@ -25,7 +25,7 @@ public class Combat {
         } else if (strengthDifference == 2) {
             successChance = 83.3;
         } else if (strengthDifference == -1) {
-            successChance = 33.3;
+            successChance = 0;
         } else if (strengthDifference == -2) {
             successChance = 16.7;
         } else if (strengthDifference > 2) {
@@ -41,7 +41,7 @@ public class Combat {
 
     public void combat(int getStrength, int getHealth, Monster monster) {
 
-        while (getHealth > 0) {
+        while (player.getHealth() > 0) {
             boolean success = checkSuccess(getStrength, monster.getMonsterStrength());
 
             if (success) {
@@ -52,7 +52,7 @@ public class Combat {
             else {
                 slowprint.slowPrintln(monster.getHitPlayer());
                 player.takeDamage(1);
-                System.out.println("Your current health: " + getHealth);
+                System.out.println("Your current health: " + player.getHealth());
 
                 if (getHealth <= 0) {
                     slowprint.slowPrintln(monster.getKillPlayer());
