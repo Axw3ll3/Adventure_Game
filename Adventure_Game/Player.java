@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Player {
     private String name;
     private int age;
-    private int health=3;
-    private int level=1;
+    private int health;
+    private int level;
     private static final int MAX_LEVEL = 4;
     private int speed;
     private int strength;
@@ -14,12 +14,12 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        this.age = age;
-        this.health = health;
-        this.level = level;
-        this.speed = speed;
-        this.strength = strength;
-        this.intelligence = intelligence;
+        this.age = 0;
+        this.health = 3;
+        this.level = 1;
+        this.speed = 0;
+        this.strength = 0;
+        this.intelligence = 0;
     }
 
     public void setName(Scanner scanner) {
@@ -33,7 +33,7 @@ public class Player {
             if (inputName.matches("[a-zA-ZÅÄÖåäö]{1,20}")) {
                 this.name = inputName;
                 isValid = true;
-                System.out.println("Your chosen name is " + name);
+                System.out.println("Your chosen name is " + this.name);
             } else {
                 System.out.println("Incorrect input. The name must contain only letters and must be between 1-20 characters.");
             }
@@ -43,15 +43,7 @@ public class Player {
     }
     
     public String getName() {
-        return name;
-    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public int getSpeed() {
-        return speed;
+        return this.name;
     }
 
     public void setAge(Scanner scanner) {
@@ -67,10 +59,10 @@ public class Player {
             }
 
             //omvandlar inmatningen till heltal och sparar i age
-            age = Integer.parseInt(inputAge);
+            this.age = Integer.parseInt(inputAge);
 
             //kontroll ifall spelaren är minst 15år och max 120år
-            if (age < 15) {
+            if (this.age < 15) {
                 System.out.println("Error: You must be at least 15 years old to play this game.");
             } else if (age > 120) {
                 System.out.println("Error: The age cannot be over 120 years.");
@@ -82,48 +74,43 @@ public class Player {
         }
     
     }
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Player player = new Player("Default name");
 
-        player.setName(scanner);
-        player.setAge(scanner);
-
-        scanner.close();
-    }
-    
  
      public int getHealth() {
-        return health;
+        return this.health;
      }
 
+     public void setHealth(int health) {
+        this.health = health;
+     } 
+
      public void takeDamage(int damage) {
-        health -= damage;
-        if (health < 0) health = 0;
+        this.health -= damage;
+        if (this.health < 0) this.health = 0;
      }
 
      //metod för att öka i nivå
      public void levelUp() {
-        if (level < MAX_LEVEL) {
-            level++;
-            System.out.println(name + " has reached level " + level + "!");
+        if (this.level < MAX_LEVEL) {
+            this.level++;
+            System.out.println(this.name + " has reached level " + this.level + "!");
         }
      }
-     
+
      //metod för belöningssystem där färdigheter kan ökas
     public void reward(String choice) {
         switch (choice) {
             case "speed":
-               speed += 1;
-               System.out.println(name + " has increased its speed to " + speed);
+               this.speed += 1;
+               System.out.println(this.name + " has increased its speed to " + this.speed);
                break;
             case "strength":
-               strength += 1;
-               System.out.println(name + " has increased its strength to " + strength);
+               this.strength += 1;
+               System.out.println(this.name + " has increased its strength to " + this.strength);
                break;
             case "intelligence":
-               intelligence += 1;
-               System.out.println(name + " has increased its intelligence to " + intelligence);
+               this.intelligence += 1;
+               System.out.println(this.name + " has increased its intelligence to " + this.intelligence);
                break;
             default:
                 System.out.println("Invalid selection, try again.");
@@ -132,9 +119,20 @@ public class Player {
     }
 
     public int getLevel() {
-        return level;
+        return this.level;
     }
 
+    public int getStrength() {
+        return this.strength;
+    }
+
+    public int getSpeed() {
+        return this.speed;
+    }
+
+    public int getIntelligence() {
+        return this.intelligence;
+    }
 
     }
 

@@ -27,8 +27,8 @@ public class Food {
         int choice;
                 //Visar meny och hämtar användarens val.
                 while (true) {
-                    slowprint.slowPrintln("[1] Yes");
-                    slowprint.slowPrintln("[2] No");
+                    System.out.println("[1] Yes");
+                    System.out.println("[2] No");
         
                     // Kallar på metod för att se att input av användare är en integer
                    choice = checkChoice(scanner);
@@ -77,10 +77,10 @@ public class Food {
             boolean firstrun = true;
             do {
     
-                if(!firstrun) {slowprint.slowPrintln("Write a numberical option (1 or 2)!");}
+                if(!firstrun) {System.out.println("Write a numberical option (1 or 2)!");}
                 while (!scanner.hasNextInt()) {
                     
-                    slowprint.slowPrintln("Write a number!");
+                    System.out.println("Write a number!");
                     
                     scanner.next(); 
                     

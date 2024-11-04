@@ -23,15 +23,16 @@ public void gameOver(){
         System.out.println("First we are going to start by creating your character");
         Player player = new Player("Default name");
         player.setName(s);
+        player.setAge(s);
         System.out.println("Your current skills are: "); //+KARAKTÄR EGENSKAPER
         System.out.println("Health: " + player.getHealth());
-        System.out.println("Strength: " );
-        System.out.println("Speed: ");
-        System.out.println("Intelligence: ");
+        System.out.println("Strength: " + player.getStrength() );
+        System.out.println("Speed: " + player.getSpeed());
+        System.out.println("Intelligence: " + player.getIntelligence());
         System.out.println("Press Enter to begin...");
         s.nextLine(); //Väntar tills user trycker på enter
         System.out.println("");//Här beskrivande text om hur karaktären vaknar upp på platsen
-        System.out.println("At your left you spot the buildings of what seems to have once been a small city \n" +
+        Slowprint.slowPrintln("At your left you spot the buildings of what seems to have once been a small city \n" +
     "full of life, with a police station, a hospital, and a mall, now completely abandoned.\n" +
     "Most of what's left of the windows are now just holes, with broken glass on the street,\n" +
     "as if someone has been in such a rush, they've just jumped right out of the window.\n" +
@@ -46,7 +47,7 @@ public void gameOver(){
     "you could really use some heat, but just the thought of going into one of the houses\n" +
     "gives you the creeps. You don't know what awaits you in either way, but maybe the forest\n" +
     "at least could offer you some sort of shelter, away from the eerie city.\n"
-    + "\n Do you choose to [1] go to the city or [2] go into the forest? ");
+    + "\n Do you choose to [1] go to the city or [2] go into the forest? ", 1);
     int choiceCorF = s.nextInt();
     while (choiceCorF != 1 && choiceCorF != 2){ 
         System.out.println("You have to enter a valid choice! Try again: ");

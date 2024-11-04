@@ -18,13 +18,13 @@ public class GameEngine {
         puzzle.arrivalAtPuzzle();
         */
         
-        Riddle riddle = new Riddle();
-        riddle.arrivalAtRiddle();
+        //Riddle riddle = new Riddle();
+        //riddle.arrivalAtRiddle();
         //riddle.questionAndChoice();
 
         Player player = new Player(null);
-        
         Zombie zombie = new Zombie();
+        
 
     
     }

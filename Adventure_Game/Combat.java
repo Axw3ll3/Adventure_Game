@@ -37,8 +37,8 @@ public class Combat {
 
     public void combat(int getStrength, int getHealth, Monster monster) {
 
-        while (player.getHealth() > 0) {
-            boolean success = checkSuccess(player.getStrength(), monster.getMonsterStrength());
+        while (getHealth > 0) {
+            boolean success = checkSuccess(getStrength, monster.getMonsterStrength());
 
             if (success) {
                 slowprint.slowPrintln(monster.getKilledByPlayer());
@@ -48,9 +48,9 @@ public class Combat {
             else {
                 slowprint.slowPrintln(monster.getHitPlayer());
                 player.takeDamage(1);
-                System.out.println("Your current health: " + player.getHealth());
+                System.out.println("Your current health: " + getHealth);
 
-                if (player.getHealth() <= 0) {
+                if (getHealth <= 0) {
                     slowprint.slowPrintln(monster.getKillPlayer());
                     break;
                 }

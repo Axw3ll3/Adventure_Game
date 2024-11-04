@@ -41,10 +41,10 @@ public class Puzzle {
         boolean firstrun = true;
         do {
 
-            if(!firstrun) {slowprint.slowPrintln("Write a numberical option (1-4)!");}
+            if(!firstrun) {System.out.println("Write a numberical option (1-4)!");}
             while (!scanner.hasNextInt()) {
                 
-                slowprint.slowPrintln("Write a number!");
+                System.out.println("Write a number!");
                 
                 scanner.next(); 
                 
