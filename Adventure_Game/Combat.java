@@ -9,9 +9,11 @@ public class Combat {
     private int choice;
     Slowprint slowprint = new Slowprint();
     private Player player;
+    private Menu menu;
 
     public Combat (Player player) {
         this.player = player;
+        this.menu = menu;
     }
 
     public boolean checkSuccess(int getStrength, int getMonsterStrength){
@@ -50,17 +52,18 @@ public class Combat {
                 break;
             } 
             else {
+                if (player.getHealth() < 1) {
+                    slowprint.slowPrintln(monster.getKillPlayer());
+                    menu.gameOver();
+                }
                 slowprint.slowPrintln(monster.getHitPlayer());
                 player.takeDamage(1);
                 System.out.println("Your current health: " + player.getHealth());
 
-                if (getHealth <= 0) {
-                    slowprint.slowPrintln(monster.getKillPlayer());
-                    break;
-                }
 
                 System.out.println("Would you like to try again or run away?");
                 System.out.println("Press 1 to try again, or 2 to run away:");
+                
                 
                 int choice = 0;
 
@@ -74,6 +77,7 @@ public class Combat {
 
                 if (choice == 2) {
                     System.out.println("You run away!");
+                    player.reward("speed");
                     break;
                 } 
                 else if(choice == 1) {

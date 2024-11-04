@@ -47,7 +47,7 @@ public void gameOver(){
     "you could really use some heat, but just the thought of going into one of the houses\n" +
     "gives you the creeps. You don't know what awaits you in either way, but maybe the forest\n" +
     "at least could offer you some sort of shelter, away from the eerie city.\n"
-    + "\n Do you choose to [1] go to the city or [2] go into the forest? ", 1);
+    + "\nDo you choose to [1] go to the city or [2] go into the forest? ", 1);
     int choiceCorF = s.nextInt();
     while (choiceCorF != 1 && choiceCorF != 2){ 
         System.out.println("You have to enter a valid choice! Try again: ");

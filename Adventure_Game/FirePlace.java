@@ -21,7 +21,7 @@ public class FirePlace {
          + "No firewood was stacked, no sign of another soul - only the cold stones and the faint scent of old ashes.\nKneeling down "
          + "you brushed your right hand over the stones, feeling a chill that ran deeper than the night air.\nYou hesitate, then decide to gather some kindling nearby, "
          + "preparing to bring warmth back to this quiet, abandoned place.\nYou think twice, do I want to start a fire or not? "
-         + "\nWhat if I attract unwanted creatures towards me? Do you still want to lit the fireplace?", 20);
+         + "\nWhat if I attract unwanted creatures towards me? Do you still want to lit the fireplace?", 2);
     }
 
     public void askToLit() {
