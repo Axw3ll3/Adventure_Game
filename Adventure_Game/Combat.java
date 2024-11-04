@@ -10,6 +10,10 @@ public class Combat {
     Slowprint slowprint = new Slowprint();
     Player player = new Player(null);
 
+    public Combat (Player player) {
+        
+    }
+
     public boolean checkSuccess(int getStrength, int getMonsterStrength){
         int strengthDifference = getStrength - getMonsterStrength;
                 

@@ -54,12 +54,12 @@ public class FirePlace {
     public void ifLit() {
         isLit = true;
         slowprint.slowPrintln("You've decided to lit the fire.");
-        intelligence += 1;
-        slowprint.slowPrintln("You've also gotten a skillpoint for intelligence! " + "Unfortunally, you attracted spiders towards your position." ,50);
+        player.reward("intelligence");
+        slowprint.slowPrintln("Unfortunally, you attracted spiders towards your position.");
         Spider spider = new Spider();
-        Combat combat = new Combat();
+        Combat combat = new Combat(player);
         spider.getDescription();
-        combat.combat(player.getStrength(), player.getHealth(), spider);
+        //combat.combat(player.getStrength(), player.getHealth(), spider);
         
     }
     public void ifNotLit() {
