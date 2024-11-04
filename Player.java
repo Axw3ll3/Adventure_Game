@@ -133,14 +133,22 @@ public class Player {
         return this.strength;
     }
 
+    public int getSpeed() {
+        return this.speed;
+    }
+
+    public int getIntelligence() {
+        return this.intelligence;
+    }
 
     }
 
 
  
 
-    }
 
+
+    
 
  
 
