@@ -1,26 +1,26 @@
 package Adventure_Game;
 
 public abstract class Monster {
-    private int monsterStrenght;
+    private int monsterStrength;
     private String description;
     private String hitPlayer;
     private String killPlayer;
     private String killedByPlayer;
 
-    public Monster(int monsterStrenght, String description, String hitPlayer, String killPlayer, String killedByPlayer){
-        this.monsterStrenght = monsterStrenght;
+    public Monster(int monsterStrength, String description, String hitPlayer, String killPlayer, String killedByPlayer){
+        this.monsterStrength = monsterStrength;
         this.description = description;
         this.killPlayer = killPlayer;
         this.hitPlayer = hitPlayer;
         this.killedByPlayer = killedByPlayer;
     }
 
-    public int getMonsterStrenght() {
-        return monsterStrenght;
+    public int getMonsterStrength() {
+        return monsterStrength;
     }
 
-    public void setMonsterStrenght(int monsterStrenght) {
-        this.monsterStrenght = monsterStrenght;
+    public void setMonsterStrenght(int monsterStrength) {
+        this.monsterStrength = monsterStrength;
     }
 
     public String getDescription() {

@@ -8,22 +8,23 @@ public class Combat {
     private Scanner sc = new Scanner(System.in);
     private int choice;
     Slowprint slowprint = new Slowprint();
+    Player player = new Player(null);
 
-    public boolean checkSuccess(int playerStrenght, int monsterStrength){
-        int strenghtDifference = playerStrenght - monsterStrength;
+    public boolean checkSuccess(int getStrength, int getMonsterStrength){
+        int strengthDifference = getStrength - getMonsterStrength;
                 
         double successChance;
-        if (strenghtDifference == 0) {
+        if (strengthDifference == 0) {
             successChance = 50.0;
-        } else if (strenghtDifference == 1) {
+        } else if (strengthDifference == 1) {
             successChance = 66.6;
-        } else if (strenghtDifference == 2) {
+        } else if (strengthDifference == 2) {
             successChance = 83.3;
-        } else if (strenghtDifference == -1) {
+        } else if (strengthDifference == -1) {
             successChance = 33.3;
-        } else if (strenghtDifference == -2) {
+        } else if (strengthDifference == -2) {
             successChance = 16.7;
-        } else if (strenghtDifference > 2) {
+        } else if (strengthDifference > 2) {
             successChance = 100.0;
         } else {
             successChance = 0.0;
@@ -34,22 +35,23 @@ public class Combat {
         
     }
 
-    public void combat(int getPlayerStrength, int getPlayerHealth, Monster monster) {
+    public void combat(int getStrength, int getHealth, Monster monster) {
 
-        while (getPlayerHealth > 0) {
-            boolean success = checkSuccess(getPlayerStrength, monster.getMonsterStrength());
+        while (player.getHealth() > 0) {
+            boolean success = checkSuccess(player.getStrength(), monster.getMonsterStrength());
 
             if (success) {
-                slowprint.slowPrintln(monster.getKilledByPlayer);
+                slowprint.slowPrintln(monster.getKilledByPlayer());
+                player.reward("strength");
                 break;
             } 
             else {
-                slowprint.slowPrintln(monster.getHitPlayer);
-                setPlayerHealth -= 1;
-                System.out.println("Your current health: " + getPlayerHealth);
+                slowprint.slowPrintln(monster.getHitPlayer());
+                player.takeDamage(1);
+                System.out.println("Your current health: " + player.getHealth());
 
-                if (getPlayerHealth <= 0) {
-                    slowprint.slowPrintln(monster.getKillPlayer);
+                if (player.getHealth() <= 0) {
+                    slowprint.slowPrintln(monster.getKillPlayer());
                     break;
                 }
 

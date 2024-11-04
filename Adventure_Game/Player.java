@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Player {
     private String name;
     private int age;
-    private int health;
-    private int level;
+    private int health=3;
+    private int level=1;
     private static final int MAX_LEVEL = 4;
     private int speed;
     private int strength;
@@ -14,12 +14,12 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        this.age = 0;
-        this.health = 3;
-        this.level = 1;
-        this.speed = 0;
-        this.strength = 0;
-        this.intelligence = 0;
+        this.age = age;
+        this.health = health;
+        this.level = level;
+        this.speed = speed;
+        this.strength = strength;
+        this.intelligence = intelligence;
     }
 
     public void setName(Scanner scanner) {
@@ -44,6 +44,14 @@ public class Player {
     
     public String getName() {
         return name;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 
     public void setAge(Scanner scanner) {
