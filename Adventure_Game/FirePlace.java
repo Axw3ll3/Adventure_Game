@@ -36,9 +36,6 @@ public class FirePlace {
                         switch (choice) {
                             case 1:
                                 ifLit();
-                                Spider spider = new Spider();
-                                Combat combat = new Combat();
-                                //Combat.combat(getPlayerStrength, getPlayerHealth, spider);
                                 break;
         
                             case 2:
@@ -57,7 +54,10 @@ public class FirePlace {
         slowprint.slowPrintln("You've decided to lit the fire.");
         intelligence += 1;
         slowprint.slowPrintln("You've also gotten a skillpoint for intelligence! " + "Unfortunally, you attracted spiders towards your position." ,50);
-        //Metod för att kalla på spindlar
+        Spider spider = new Spider();
+        Combat combat = new Combat();
+        spider.getDescription();
+        //Combat.combat(getPlayerStrength, getPlayerHealth, spider);
         
     }
     public void ifNotLit() {

@@ -65,7 +65,10 @@ public void gameOver(){
     
     break;
     }
-
+System.out.println("As you leave the policestation behind, you look around to the remaining houses. Besides the residentbuildings \n"
++ "there are two buildings rising above the others. One looks like a mall and the other a hospital. Both could host even more \n "
++ "gruesome creatures, but they could also contain a better chance to escape, or some sort of a lifeline.");
+System.out.println();
 System.out.println("Här är vi nu"); //ta bort sen
 
 
