@@ -8,9 +8,11 @@ public class FirePlace {
     Scanner scanner = new Scanner(System.in);
     int health = 3;
     int intelligence = 0;
+    private Player player;
 
     public FirePlace(Player player) {
         this.isLit = false;
+        this.player = player;
     }
 
     public void arrivalAtFirePlace(){
@@ -57,7 +59,7 @@ public class FirePlace {
         Spider spider = new Spider();
         Combat combat = new Combat();
         spider.getDescription();
-        //Combat.combat(getPlayerStrength, getPlayerHealth, spider);
+        combat.combat(player.getStrength(), player.getHealth(), spider);
         
     }
     public void ifNotLit() {
