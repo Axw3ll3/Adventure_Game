@@ -9,7 +9,7 @@ public class City{
         System.out.println("------------------------------------------------------");
         System.out.println("You've arrived to the city");
         zombie.getDescription();
-        //zombie attack
+        combat.combat(player.getStrength(), player.getHealth(), zombie);
         Policestation policestation = new Policestation(player);
         policestation.ifPolicestation(player);
 

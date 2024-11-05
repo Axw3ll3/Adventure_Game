@@ -14,7 +14,7 @@ public class Policestation {
         while (choicePorH != 1 && choicePorH != 2){ 
             System.out.println("You have to enter a valid choice! Try again: ");
             choicePorH = s.nextInt();
-            s.close();
+            
          }
         switch(choicePorH){
         case 1:

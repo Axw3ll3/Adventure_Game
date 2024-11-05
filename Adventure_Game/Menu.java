@@ -22,6 +22,7 @@ public void gameOver(){
         System.out.println("------------------------------------------");
         System.out.println("First we are going to start by creating your character");
         Player player = new Player("Default name");
+        Menu menu = new Menu(player);
         player.setName(s);
         player.setAge(s);
         System.out.println("Your current skills are: "); //+KARAKTÄR EGENSKAPER
@@ -66,9 +67,30 @@ public void gameOver(){
     
     break;
     }
-System.out.println("As you leave the policestation behind, you look around to the remaining houses. Besides the residentbuildings \n"
+    
+    Slowprint.slowPrintln("As you leave the policestation behind, you look around to the remaining houses. Besides the residentbuildings \n"
 + "there are two buildings rising above the others. One looks like a mall and the other a hospital. Both could host even more \n "
-+ "gruesome creatures, but they could also contain a better chance to escape, or some sort of a lifeline.");
++ "gruesome creatures, but they could also contain a better chance to escape, or some sort of a lifeline.\n"
++ "Which one would be the better choice? The mall [1] or the hospital [2]? \n"
++ "Enter your choice...", 2);
+int choiceMorH = s.nextInt();
+while (choiceMorH != 1 && choiceMorH != 2){ 
+    System.out.println("You have to enter a valid choice! Try again: ");
+    choiceMorH = s.nextInt();
+ }
+switch(choiceMorH){
+case 1:
+Mall m = new Mall(player);
+System.out.println();
+break;
+
+case 2:
+Hospital h = new Hospital(player);
+System.out.println();
+break;
+}
+
+
 System.out.println();
 System.out.println("Här är vi nu"); //ta bort sen
 

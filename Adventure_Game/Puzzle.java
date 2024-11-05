@@ -80,7 +80,7 @@ public class Puzzle {
             }
             System.out.println();
         }
-        scanner.close();
+        
     }
 
     //Metod som räknar ut svar baserat på operator
