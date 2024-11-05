@@ -6,7 +6,7 @@ public class City{
         Zombie zombie = new Zombie();
         Combat combat = new Combat(player);
         Scanner s = new Scanner(System.in);
-        System.out.println("------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------");
         System.out.println("You've arrived to the city");
         zombie.getDescription();
         combat.combat(player.getStrength(), player.getHealth(), zombie);

@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Forest {
     public Forest(Player player){
-        
+        System.out.println("----------------------------------------------------------------");
         FirePlace fireplace = new FirePlace(player);
         fireplace.arrivalAtFirePlace(); //Skriv ut berättelse
         fireplace.askToLit();

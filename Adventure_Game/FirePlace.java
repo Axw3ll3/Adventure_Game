@@ -29,8 +29,8 @@ public class FirePlace {
         int choice;
                 //Visar meny och hämtar användarens val.
                 while (true) {
-                    slowprint.slowPrintln("1. Yes");
-                    slowprint.slowPrintln("2. No");
+                    slowprint.slowPrintln("[1] Yes");
+                    slowprint.slowPrintln("[2] No");
         
                     // Kallar på metod för att se att input av användare är en integer
                    choice = checkChoice(scanner);
@@ -65,8 +65,8 @@ public class FirePlace {
     public void ifNotLit() {
         isLit = false;
         slowprint.slowPrintln("You've decided to not lit the fire.");
-        health -=1;
-        slowprint.slowPrintln("Due to you not putting up the fire, you've gotten cold and lost a healthpoint. " + "-1 Healthpoint, you still got "+health+ " left");
+        player.takeDamage(1);
+        slowprint.slowPrintln("Due to you not putting up the fire, you've gotten cold and lost a healthpoint. " + "-1 Healthpoint, you still got "+player.getHealth()+ " left");
         slowprint.slowPrintln("You've moved on without a scratch though, which let's you move on to the next part of the story");
         //Metod för att ta sig vidare i historien
     }

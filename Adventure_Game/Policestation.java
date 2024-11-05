@@ -6,9 +6,10 @@ public class Policestation {
     }
     public boolean ifPolicestation(Player player){
         Scanner s = new Scanner(System.in);
-        System.out.println("The nearest building is the policestation. You make a run for it. \n"
+        System.out.println("----------------------------------------------------------------");
+        Slowprint.slowPrintln("The nearest building is the policestation. You make a run for it. \n"
         + "Perhaps inside you can find something useful. The curtains inside are blocking the windows, \n "
-        + " making the wole station seem... quiet.");
+        + " making the wole station seem... quiet.",2);
         System.out.println("Do you choose to stay at the policestation [1] or make a run for the next building [2]? ");
         int choicePorH = s.nextInt();
         while (choicePorH != 1 && choicePorH != 2){ 

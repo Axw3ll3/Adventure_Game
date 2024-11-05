@@ -8,11 +8,11 @@ public Menu(Player player){
 
 }
 public void gameOver(){
-    System.out.println("-------------Results: -------------");
-    System.out.println("Health: " + player.getHealth());
-    System.out.println("Strength: "+player.getStrength());
-    System.out.println("Speed: "+ player.getSpeed());
-    System.out.println("Intelligence: "+ player.getIntelligence());
+    Slowprint.slowPrintln("-------------Results: -------------",2);
+    Slowprint.slowPrintln("Health: " + player.getHealth(),2);
+    Slowprint.slowPrintln("Strength: "+player.getStrength(),2);
+    Slowprint.slowPrintln("Speed: "+ player.getSpeed(),2);
+    Slowprint.slowPrintln("Intelligence: "+ player.getIntelligence(),2);
     System.exit(0);
 }
 //-----------------------------------------------MAIN --------------------------------------------------    
@@ -25,30 +25,18 @@ public void gameOver(){
         Menu menu = new Menu(player);
         player.setName(s);
         player.setAge(s);
-        System.out.println("Your current skills are: "); //+KARAKTÄR EGENSKAPER
-        System.out.println("Health: " + player.getHealth());
-        System.out.println("Strength: " + player.getStrength() );
-        System.out.println("Speed: " + player.getSpeed());
-        System.out.println("Intelligence: " + player.getIntelligence());
-        System.out.println("Press Enter to begin...");
+        Slowprint.slowPrintln("Your current skills are: ",2); //+KARAKTÄR EGENSKAPER
+        Slowprint.slowPrintln("Health: " + player.getHealth(),2);
+        Slowprint.slowPrintln("Strength: " + player.getStrength(),2 );
+        Slowprint.slowPrintln("Speed: " + player.getSpeed(),2);
+        Slowprint.slowPrintln("Intelligence: " + player.getIntelligence(),2);
+        Slowprint.slowPrintln("Press Enter to begin...",2);
         s.nextLine(); //Väntar tills user trycker på enter
-        System.out.println("");//Här beskrivande text om hur karaktären vaknar upp på platsen
-        Slowprint.slowPrintln("At your left you spot the buildings of what seems to have once been a small city \n" +
-    "full of life, with a police station, a hospital, and a mall, now completely abandoned.\n" +
-    "Most of what's left of the windows are now just holes, with broken glass on the street,\n" +
-    "as if someone has been in such a rush, they've just jumped right out of the window.\n" +
-    "The cars are parked in the middle of the road, doors open, as if someone did not even\n" +
-    "have the time to close it. As you stand a bit away from the cars, it's hard to tell,\n" +
-    "but you can't help but see the spots on one of the car's back window. It really looks\n" +
-    "like...blood.\n\n" +
-    
-    "At your right you get a glimpse of the tall dark trees, barely visible as the mist\n" +
-    "slowly surrounds it. It is quiet, too quiet, except for the occasional sounds of\n" +
-    "something... Scraping? Or is it footsteps amongst the leaves? It's cold outside and\n" +
-    "you could really use some heat, but just the thought of going into one of the houses\n" +
-    "gives you the creeps. You don't know what awaits you in either way, but maybe the forest\n" +
-    "at least could offer you some sort of shelter, away from the eerie city.\n"
-    + "\nDo you choose to [1] go to the city or [2] go into the forest? ", 1);
+        System.out.println("");//Beskrivning start
+        Slowprint.slowPrintln(player.getName()+" wake up in the middle of a road. You have no memory of how you got here. You are all alone",2);
+        Slowprint.slowPrintln("At your left you spot the buildings of what seems to have once been a small city full of life, with a police station, a hospital, and a mall, now completely abandoned.Most of what's left of the windows are now just holes, with broken glass on the street, as if someone has been in such a rush, they've just jumped right out of the window. The cars are parked in the middle of the road, doors open, as if someone did not even have the time to close it. As you stand a bit away from the cars, it's hard to tell, but you can't help but see the spots on one of the car's back window. It really looks like...blood.\n\n" +
+       "At your right you get a glimpse of the tall dark trees, barely visible as the mist slowly surrounds it. It is quiet, too quiet, except for the occasional sounds of something... Scraping? Or is it footsteps amongst the leaves? It's cold outside and you could really use some heat, but just the thought of going into one of the houses gives you the creeps. You don't know what awaits you in either way, but maybe the forest at least could offer you some sort of shelter, away from the eerie city.\n"
+       + "\nDo you choose to [1] go to the city or [2] go into the forest? ", 1);
     int choiceCorF = s.nextInt();
     while (choiceCorF != 1 && choiceCorF != 2){ 
         System.out.println("You have to enter a valid choice! Try again: ");
@@ -68,31 +56,32 @@ public void gameOver(){
     break;
     }
     
-    Slowprint.slowPrintln("As you leave the policestation behind, you look around to the remaining houses. Besides the residentbuildings \n"
-+ "there are two buildings rising above the others. One looks like a mall and the other a hospital. Both could host even more \n "
-+ "gruesome creatures, but they could also contain a better chance to escape, or some sort of a lifeline.\n"
-+ "Which one would be the better choice? The mall [1] or the hospital [2]? \n"
-+ "Enter your choice...", 2);
-int choiceMorH = s.nextInt();
-while (choiceMorH != 1 && choiceMorH != 2){ 
-    System.out.println("You have to enter a valid choice! Try again: ");
-    choiceMorH = s.nextInt();
- }
-switch(choiceMorH){
-case 1:
-Mall m = new Mall(player);
-System.out.println();
-break;
+        Slowprint.slowPrintln("As you leave the policestation behind, you look around to the remaining houses. Besides the residentbuildings \n"
+    + "there are two buildings rising above the others. One looks like a mall and the other a hospital. Both could host even more \n "
+    + "gruesome creatures, but they could also contain a better chance to escape, or some sort of a lifeline.\n"
+    + "Which one would be the better choice? The mall [1] or the hospital [2]? \n"
+    + "Enter your choice...", 2);
+    int choiceMorH = s.nextInt();
+    while (choiceMorH != 1 && choiceMorH != 2){ 
+        System.out.println("You have to enter a valid choice! Try again: ");
+        choiceMorH = s.nextInt();
+    }
+    switch(choiceMorH){
+    case 1:
+    Mall m = new Mall(player);
+    System.out.println();
+    break;
 
-case 2:
-Hospital h = new Hospital(player);
-System.out.println();
-break;
-}
+    case 2:
+    Hospital h = new Hospital(player);
+    System.out.println();
+    break;
+    }
 
+    Slowprint.slowPrintln("As you finally open the last door you can barely believe your eyes. A helicopter! As you run for it an start the, thankfully still working, engine, you watch down towards the city you are about to leave behind, and you feel a great relief inside. You made it!", 2);
+    System.out.println("");
+    menu.gameOver();
 
-System.out.println();
-System.out.println("Här är vi nu"); //ta bort sen
 
 
 

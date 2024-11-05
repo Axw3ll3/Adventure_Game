@@ -24,6 +24,7 @@ public abstract class Monster {
     }
 
     public String getDescription() {
+        System.out.println("");
         return description;
     }
 
