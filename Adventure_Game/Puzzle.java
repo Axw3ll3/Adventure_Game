@@ -5,16 +5,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Puzzle {
-    //Glöm inte ta bort intelligence, scanner, slowprint och food sen.
-    int intelligence;
+    //Glöm inte ta bort scanner, slowprint och food sen.
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
     Slowprint slowprint = new Slowprint();
-    Food food = new Food();
+    private Food food;
+    private Player player;
 
 
 
     public Puzzle() {
+        this.food=food;
+        this.player=player;
     }
 
     public void arrivalAtPuzzle() {
@@ -32,7 +34,6 @@ public class Puzzle {
 
     public void ifNotSolved(){
         slowprint.slowPrintln("You couldn't come up with the answer to the puzzle (equation) and decide to leave the policestation due to you already exploring the whole place.");
-        //Metod för val mellan sjukhus och köpcentrum
     }
 
     public int checkChoice (Scanner scanner){

@@ -27,7 +27,7 @@ public class Combat {
         } else if (strengthDifference == 2) {
             successChance = 83.3;
         } else if (strengthDifference == -1) {
-            successChance = 0;
+            successChance = 33.3;
         } else if (strengthDifference == -2) {
             successChance = 16.7;
         } else if (strengthDifference > 2) {

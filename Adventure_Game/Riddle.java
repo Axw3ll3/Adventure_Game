@@ -5,12 +5,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Riddle {
-    int health = 3;
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
     Slowprint slowprint = new Slowprint();
+    private Player player;
 
     public Riddle() {
+        this.player=player;
     }
 
     public void arrivalAtRiddle(){
@@ -27,9 +28,9 @@ public class Riddle {
     }
 
     public void ifRiddleNotSolved(){
-        if (health > 1) {
-                health -= 1;
-                slowprint.slowPrintln("Wrong answer. You got " +health+ " health remaining.");
+        if (player.getHealth() > 1) {
+                player.takeDamage(1);;
+                slowprint.slowPrintln("Wrong answer. You got " +player.getHealth()+ " health remaining.");
                 questionAndChoice();
             }
         else {
