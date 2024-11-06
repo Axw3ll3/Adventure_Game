@@ -41,8 +41,9 @@ public class Combat {
         
     }
 
-    private int actionChoice(String choiceMessage) {
+    private int actionChoice(String choiceMessage, String choiceOption) {
         System.out.println(choiceMessage);
+        System.out.println(choiceOption);
 
         try {
             choice = sc.nextInt();
@@ -55,8 +56,9 @@ public class Combat {
 
     public void combat(int getStrength, int getHealth, Monster monster) {
         
-        actionChoice("Would you like to fight, or try to run away?");
+        actionChoice("Would you like to fight, or try to run away?", "Press 1 to fight, or press 2 to run away.");
 
+        outerSwitch:
         switch (choice) {
             case 2:
                 System.out.println("You run away!");
@@ -79,13 +81,14 @@ public class Combat {
 
                         System.out.println("Your current health: " + player.getHealth());
 
-                        actionChoice("Would you like to try again, or run away?");
+                        actionChoice("Would you like to try again, or run away?", "Press 1 to try again, or press 2 to run away.");
                         
+                        innerSwitch:
                         switch (choice) {
                             case 2:
                                 System.out.println("You run away!");
                                 player.reward("speed");
-                                break;
+                                break outerSwitch;
                             case 1:
                                 System.out.println("You try again.");
                                 break;
