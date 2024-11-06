@@ -6,8 +6,6 @@ public class FirePlace {
     private boolean isLit;
     Slowprint slowprint = new Slowprint();
     Scanner scanner = new Scanner(System.in);
-    int health = 3;
-    int intelligence = 0;
     private Player player;
 
     public FirePlace(Player player) {
@@ -58,7 +56,11 @@ public class FirePlace {
         slowprint.slowPrintln("Unfortunally, you attracted spiders towards your position.");
         Spider spider = new Spider();
         Combat combat = new Combat(player);
+<<<<<<< HEAD
         slowprint.slowPrintln(spider.getDescription(), 2);
+=======
+        slowprint.slowPrintln(spider.getDescription());
+>>>>>>> aacfc08ce82346d45a40070c1f7cb97881722e6e
         combat.combat(player.getStrength(), player.getHealth(), spider);
         
     }
@@ -68,7 +70,7 @@ public class FirePlace {
         player.takeDamage(1);
         slowprint.slowPrintln("Due to you not putting up the fire, you've gotten cold and lost a healthpoint. " + "-1 Healthpoint, you still got "+player.getHealth()+ " left");
         slowprint.slowPrintln("You've moved on without a scratch though, which let's you move on to the next part of the story");
-        //Metod för att ta sig vidare i historien
+
     }
     public int checkChoice (Scanner scanner){
         //Check av input så det är ett positivt nummer över 0

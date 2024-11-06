@@ -3,18 +3,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Food {
-    //Glöm inte ta bort intelligence, health, Slowprint och scanner
-    int intelligence;
-    int health = 3;
-    int strength;
+    //Glöm inte ta bort Slowprint och scanner
     Random r = new Random();
     int random = r.nextInt(2);
     Slowprint slowprint = new Slowprint();
     Scanner scanner = new Scanner(System.in);
     Spider spider = new Spider();
+    private Player player;
 
 
     public Food() {
+        this.player=player;
     }
 
     public void findingTheFood() {
@@ -53,22 +52,19 @@ public class Food {
     public void eatingTheFood() {
         int random = r.nextInt(2);
         if (random == 0) {
-            health -= 1;
-            slowprint.slowPrintln("The beans you found are old and made you get food poisoning, and this makes you lose -1 Healthpoint. You still got " +health+ " left.");
+            player.takeDamage(1);
+            slowprint.slowPrintln("The beans you found are old and made you get food poisoning, and this makes you lose -1 Healthpoint. You still got " +player.getHealth()+ " left.");
             //Metod check för om spelaren dör
-            //Metod för att ta sig vidare
         }
         else if (random == 1) {
             slowprint.slowPrintln("You've found yourself some fresh beans, which makes your strenght go up by 1 due to you getting much needed energy.");
-            strength +=1;
-            //Metod för att ta sig vidare
+            player.reward("strenght");
         }
     }
 
     public void notEatingTheFood() {
-        intelligence +=1;
+        player.reward("intelligence");
         slowprint.slowPrintln("Smart choice to not eat food in an abandoned policestation, this makes you gain +1 in intelligence.");
-        //Metod för att ta sig vidare
         
     }
 
