@@ -56,7 +56,7 @@ public class FirePlace {
         slowprint.slowPrintln("Unfortunally, you attracted spiders towards your position.");
         Spider spider = new Spider();
         Combat combat = new Combat(player);
-        spider.getDescription();
+        slowprint.slowPrintln(spider.getDescription());
         combat.combat(player.getStrength(), player.getHealth(), spider);
         
     }
