@@ -7,12 +7,12 @@ public class Mall {
         System.out.println("You enter through the big doors, facing the street. The dim lights inside tells you that there might atleast be electricity, however weak. Some of the small shops inside has been ransacked, while others just looks like a complete mess, clothes and articles laying all over the floors. Somewhere in the distant you hear what looks like a talking voice, almost like a radio. You decide to carefully walk towards the sound. Suddenly, a scream. No... multiple screams, from som sort of animal. In the dark you suddenly feel something crawling over your feet. You slowly look down. ");
         Ratpack rats = new Ratpack();
         Combat combat = new Combat(player);
-        rats.getDescription(); //fungerar ej?
+        Slowprint.slowPrintln(rats.getDescription()); //fungerar ej?
         combat.combat(player.getStrength(), player.getHealth(), rats);
         if(player.getIntelligence() < 3){
             System.out.println("As you have finally escaped the pack of rats, you run for the door that leads to a stairway. When you're finally there you see there is a lock requiring some sort of pass to enter it. Requiered level of intelligence: 3. As your level of intelligence now is " + player.getIntelligence() + " you do not have enough, and cannot open the door. You hopelessly turn around, only to face something even bigger...");
             BigRat bigrat = new BigRat();
-            bigrat.getDescription(); //fungerar ej?
+            Slowprint.slowPrintln(bigrat.getDescription()); //fungerar ej?
             combat.combat(player.getStrength(), player.getHealth(), bigrat);
         }
         else {

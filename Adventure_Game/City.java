@@ -8,7 +8,7 @@ public class City{
         Scanner s = new Scanner(System.in);
         System.out.println("----------------------------------------------------------------");
         System.out.println("You've arrived to the city");
-        zombie.getDescription();
+        Slowprint.slowPrintln(zombie.getDescription(), 3);
         combat.combat(player.getStrength(), player.getHealth(), zombie);
         Policestation policestation = new Policestation(player);
         policestation.ifPolicestation(player);
