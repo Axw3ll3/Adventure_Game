@@ -10,6 +10,7 @@ public class Player {
     private int speed;
     private int strength;
     private int intelligence;
+    private Scanner sc = new Scanner (System.in);
 
 
     public Player(String name) {
@@ -136,6 +137,9 @@ public class Player {
         return this.intelligence;
     }
 
+    public Scanner getScanner() {
+        return sc;
+    }
     }
 
 
