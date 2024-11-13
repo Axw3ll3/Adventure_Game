@@ -11,12 +11,18 @@ public class Puzzle {
     Slowprint slowprint = new Slowprint();
     private Food food;
     private Player player;
+    private PlayerInput playerinput;
+    private Check check;
+    private Scanner sc;
 
 
 
     public Puzzle() {
         this.food=food;
         this.player=player;
+        this.check=check;
+        this.sc=sc;
+        this.playerinput=playerinput;
     }
 
     public void arrivalAtPuzzle() {
@@ -36,28 +42,7 @@ public class Puzzle {
         slowprint.slowPrintln("You couldn't come up with the answer to the puzzle (equation) and decide to leave the policestation due to you already exploring the whole place.");
     }
 
-    public int checkChoice (Scanner scanner){
-    //Check av input så det är ett positivt nummer över 0
-        int number;
-        boolean firstrun = true;
-        do {
 
-            if(!firstrun) {System.out.println("Write a numberical option (1-4)!");}
-            while (!scanner.hasNextInt()) {
-                
-                System.out.println("Write a number!");
-                
-                scanner.next(); 
-                
-            }
-            
-            firstrun = false;
-            number = scanner.nextInt();
-        
-        } while (number < 1 || number > 4);
-        return number;
-        
-    }
 
     public void questionAndChoice() {
         for (int i = 0; i < 1; i++) {
@@ -74,7 +59,7 @@ public class Puzzle {
 
             //Hämtar användarens val och kollar om det är korrekt
             slowprint.slowPrintln("Enter your choice of answer on the keypad: ");
-            if (options.get(checkChoice(scanner) - 1) == correctAnswer) {
+            if (options.get(check.checkChoices(sc) - 1) == correctAnswer) {
                 ifSolved();
             } else {
                 ifNotSolved();    
