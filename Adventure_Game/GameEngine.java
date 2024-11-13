@@ -6,7 +6,7 @@ public class GameEngine {
         
         Player player = new Player(null);
         FirePlace fire = new FirePlace(player);
-        fire.ifLit();
+        fire.askToLit();
 
         
     

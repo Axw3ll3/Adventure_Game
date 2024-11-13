@@ -1,12 +1,15 @@
 package Adventure_Game;
 import java.util.Scanner;
 
+
 public class FirePlace {
     //Glöm inte att ta bort health, intellegence och slowprint sen.
     private boolean isLit;
     Slowprint slowprint = new Slowprint();
     Scanner scanner = new Scanner(System.in);
     private Player player;
+    PlayerInput playerinput = new PlayerInput();
+    Check check = new Check();
 
     public FirePlace(Player player) {
         this.isLit = false;
@@ -31,7 +34,7 @@ public class FirePlace {
                     slowprint.slowPrintln("[2] No");
         
                     // Kallar på metod för att se att input av användare är en integer
-                   choice = checkChoice(scanner);
+                   choice = check.checkYesNo(playerinput.getScanner());
         
                         switch (choice) {
                             case 1:

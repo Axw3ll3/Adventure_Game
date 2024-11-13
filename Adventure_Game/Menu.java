@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Menu {
 private Player player;
 
+
 public Menu(Player player){
     this.player = player;
 
@@ -23,8 +24,8 @@ public void gameOver(){
         System.out.println("First we are going to start by creating your character");
         Player player = new Player("Default name");
         Menu menu = new Menu(player);
-        player.setName(player.getScanner());
-        player.setAge(player.getScanner());
+        player.setName(s);
+        player.setAge(s);
         Slowprint.slowPrintln("Your current skills are: ",2); //+KARAKTÄR EGENSKAPER
         Slowprint.slowPrintln("Health: " + player.getHealth(),2);
         Slowprint.slowPrintln("Strength: " + player.getStrength(),2 );
