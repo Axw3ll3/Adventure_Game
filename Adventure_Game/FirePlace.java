@@ -34,7 +34,7 @@ public class FirePlace {
                     slowprint.slowPrintln("[2] No");
         
                     // Kallar på metod för att se att input av användare är en integer
-                   choice = check.checkYesNo();
+                   choice = check.checkYesNo(playerinput.getScanner());
         
                         switch (choice) {
                             case 1:
