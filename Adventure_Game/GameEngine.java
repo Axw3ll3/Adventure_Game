@@ -4,7 +4,7 @@ public class GameEngine {
     public static void main(String[] args) {
         Slowprint slowprint = new Slowprint();
         
-        Player player = new Player(null);
+        Player player = new Player("Axel", 21, 3);
         FirePlace fire = new FirePlace(player);
         fire.askToLit();
 

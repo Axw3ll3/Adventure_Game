@@ -72,28 +72,31 @@ public class FirePlace {
         slowprint.slowPrintln("You've moved on without a scratch though, which let's you move on to the next part of the story");
 
     }
-    public int checkChoice (Scanner scanner){
-        //Check av input så det är ett positivt nummer över 0
-            int number;
-            boolean firstrun = true;
-            do {
-    
-                if(!firstrun) {slowprint.slowPrintln("Write a numberical option (1 or 2)!");}
-                while (!scanner.hasNextInt()) {
-                    
-                    slowprint.slowPrintln("Write a number!");
-                    
-                    scanner.next(); 
-                    
-                }
+    public void getFirePlaceSouvenir() {
+        int choice;
+        slowprint.slowPrintln("Do you want to take a burnt wood as a souvenir from the fireplace?");
+        while (true) {
+            slowprint.slowPrintln("[1] Yes");
+            slowprint.slowPrintln("[2] No");
+
+            // Kallar på metod för att se att input av användare är en integer
+           choice = check.checkYesNo(playerinput.getScanner());
+
+                switch (choice) {
+                    case 1:
+                        
+                        break;
+
+                    case 2:
+                        
+                        break;
                 
-                firstrun = false;
-                number = scanner.nextInt();
-            
-            } while (number < 1 || number > 2);
-            return number;
-            
+                }
+                break;
+            } 
         }
+
     }
+    
 
     
