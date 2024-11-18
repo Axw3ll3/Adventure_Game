@@ -12,16 +12,18 @@ public class Riddle {
     private PlayerInput playerinput;
     private Check check;
     private Scanner sc;
+    private Backpack backpack;
 
     public Riddle() {
         this.player=player;
         this.playerinput=playerinput;
         this.check=check;
         this.sc=sc;
+        this.backpack=backpack;
     }
 
     public void arrivalAtRiddle(){
-        slowprint.slowPrintln("After an epic battle with the rabiesdogs - fearsome, rabid creatures that terrorized the whole hospital - you find yourself in an empty and quiet hospital. "
+        slowprint.slowPrintln("After an epic battle with the rabiesdog - fearsome, rabid creatures that terrorized the whole hospital - you find yourself in an empty and quiet hospital. "
         + "You navigate through the dimly lit hallways. In the horizon you spot a door with keypad whose got a display above it. "
         + "\nYou run towards it, on the display it says:");
         questionAndChoice();
@@ -30,7 +32,8 @@ public class Riddle {
 
     public void ifRiddleSolved() {
         slowprint.slowPrintln("You've solved the numeric riddle the door opens up. You run towards freedom!");
-        //Kalla på metod för att avsluta spel och visa resultat
+        riddleSouvenir();
+        
     }
 
     public void ifRiddleNotSolved(){
@@ -41,7 +44,7 @@ public class Riddle {
             }
         else {
             slowprint.slowPrintln("You have no health left and have unfortunally died.");
-            //Kalla på metod för att visa resultat
+
         }
     }
 
@@ -94,4 +97,27 @@ public class Riddle {
             Collections.shuffle(options);
             return options;
         }
+        public void riddleSouvenir() {
+            int choice;
+            slowprint.slowPrintln("Do you want to take loosened up Enter key as a souvenir from the mall?");
+            while (true) {
+                slowprint.slowPrintln("[1] Yes");
+                slowprint.slowPrintln("[2] No");
+    
+                // Kallar på metod för att se att input av användare är en integer
+               choice = check.checkYesNo(playerinput.getScanner());
+    
+                    switch (choice) {
+                        case 1:
+                            System.out.println("You've decided to pick up the enter key as a souvenir");
+                            backpack.addItem("Enter key");
+                            break;
+                        case 2:
+                           System.out.println("You've decided to not pick up a souvenir from the mall.");
+                            break;
+                    
+                    }
+                    break;
+                } 
+            }
 }

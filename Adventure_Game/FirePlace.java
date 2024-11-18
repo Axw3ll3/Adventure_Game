@@ -10,6 +10,7 @@ public class FirePlace {
     private Player player;
     PlayerInput playerinput = new PlayerInput();
     Check check = new Check();
+    Backpack backpack = new Backpack(3);
 
     public FirePlace(Player player) {
         this.isLit = false;
@@ -62,7 +63,7 @@ public class FirePlace {
 
         slowprint.slowPrintln(spider.getDescription(), 2);
         combat.combat(player.getStrength(), player.getHealth(), spider);
-        
+        firePlaceSouvenir();
     }
     public void ifNotLit() {
         isLit = false;
@@ -72,7 +73,7 @@ public class FirePlace {
         slowprint.slowPrintln("You've moved on without a scratch though, which let's you move on to the next part of the story");
 
     }
-    public void getFirePlaceSouvenir() {
+    public void firePlaceSouvenir() {
         int choice;
         slowprint.slowPrintln("Do you want to take a burnt wood as a souvenir from the fireplace?");
         while (true) {
@@ -84,11 +85,11 @@ public class FirePlace {
 
                 switch (choice) {
                     case 1:
-                        
+                        System.out.println("You've decided to pick up burnt wood as a souvenir");
+                        backpack.addItem("Burnt wood");
                         break;
-
                     case 2:
-                        
+                       System.out.println("You've decided to not pick up a souvenir from the fireplace.");
                         break;
                 
                 }
