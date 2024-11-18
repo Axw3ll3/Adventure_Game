@@ -9,9 +9,15 @@ public class Riddle {
     Random random = new Random();
     Slowprint slowprint = new Slowprint();
     private Player player;
+    private PlayerInput playerinput;
+    private Check check;
+    private Scanner sc;
 
     public Riddle() {
         this.player=player;
+        this.playerinput=playerinput;
+        this.check=check;
+        this.sc=sc;
     }
 
     public void arrivalAtRiddle(){
@@ -39,28 +45,6 @@ public class Riddle {
         }
     }
 
-    public int checkChoice (Scanner scanner){
-        //Check av input så det är ett positivt nummer över 0
-            int number;
-            boolean firstrun = true;
-            do {
-    
-                if(!firstrun) {System.out.println("Write a numberical option (1-4)!");}
-                while (!scanner.hasNextInt()) {
-                    
-                    System.out.println("Write a number!");
-                    
-                    scanner.next(); 
-                    
-                }
-                
-                firstrun = false;
-                number = scanner.nextInt();
-            
-            } while (number < 1 || number > 4);
-            return number;
-            
-        }
     
 
 
@@ -79,7 +63,7 @@ public class Riddle {
     
                 //Hämtar användarens val och kollar om det är korrekt
                 slowprint.slowPrintln("Enter your choice of answer on the keypad: ");
-                if (options.get(checkChoice(scanner) - 1) == correctAnswer) {
+                if (options.get(check.checkChoices(sc) - 1) == correctAnswer) {
                     ifRiddleSolved();
                 } else {
                     ifRiddleNotSolved();    

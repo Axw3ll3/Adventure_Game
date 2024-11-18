@@ -10,7 +10,7 @@ public class Player {
     private int speed;
     private int strength;
     private int intelligence;
-    private Scanner sc = new Scanner (System.in);
+ 
 
 
     public Player(String name) {
@@ -23,12 +23,12 @@ public class Player {
         this.intelligence = 0;
     }
 
-    public void setName(Scanner scanner) {
+    public void setName(Scanner sc) {
         boolean isValid = false;
 
         while (!isValid) {
             System.out.println("Enter your name: ");
-            String inputName = scanner.nextLine();
+            String inputName = sc.nextLine();
 
             //en kontroll om namnet endast innehåller bokstäver och är 1-20 tecken långt.
             if (inputName.matches("[a-zA-ZÅÄÖåäö]{1,20}")) {
@@ -47,11 +47,11 @@ public class Player {
         return this.name;
     }
 
-    public void setAge(Scanner scanner) {
+    public void setAge(Scanner sc) {
        
         while (true) {
             System.out.println("Enter your age: ");
-            String inputAge = scanner.nextLine();
+            String inputAge = sc.nextLine();
 
             //Kontroll om inmatningen endast innehåller siffror
             if (!inputAge.matches("\\d+")) {
@@ -137,9 +137,7 @@ public class Player {
         return this.intelligence;
     }
 
-    public Scanner getScanner() {
-        return sc;
-    }
+
     }
 
 

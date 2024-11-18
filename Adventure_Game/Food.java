@@ -7,13 +7,18 @@ public class Food {
     Random r = new Random();
     int random = r.nextInt(2);
     Slowprint slowprint = new Slowprint();
-    Scanner scanner = new Scanner(System.in);
     Spider spider = new Spider();
     private Player player;
+    private PlayerInput playerinput;
+    private Check check;
+    private Scanner sc;
 
 
     public Food() {
         this.player=player;
+        this.playerinput=playerinput;
+        this.check=check;
+        this.sc=sc;
     }
 
     public void findingTheFood() {
@@ -30,7 +35,7 @@ public class Food {
                     System.out.println("[2] No");
         
                     // Kallar på metod för att se att input av användare är en integer
-                   choice = checkChoice(scanner);
+                   choice = check.checkYesNo(playerinput.getScanner());
         
                         switch (choice) {
                             case 1:
@@ -68,26 +73,4 @@ public class Food {
         
     }
 
-    public int checkChoice (Scanner scanner){
-        //Check av input så det är ett positivt nummer över 0
-            int number;
-            boolean firstrun = true;
-            do {
-    
-                if(!firstrun) {System.out.println("Write a numberical option (1 or 2)!");}
-                while (!scanner.hasNextInt()) {
-                    
-                    System.out.println("Write a number!");
-                    
-                    scanner.next(); 
-                    
-                }
-                
-                firstrun = false;
-                number = scanner.nextInt();
-            
-            } while (number < 1 || number > 2);
-            return number;
-            
-        }
 }

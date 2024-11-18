@@ -14,10 +14,10 @@ public class Cave {
 public boolean enteringCave(){
 Scanner s = new Scanner(System.in);
 int choiceCave = s.nextInt();
-while (choiceCave != 1 && choiceCave != 2){ 
-    System.out.println("You have to enter a valid choice! Try again: ");
-    choiceCave = s.nextInt();
- }
+    while (choiceCave != 1 && choiceCave != 2){ 
+        System.out.println("You have to enter a valid choice! Try again: ");
+        choiceCave = s.nextInt();
+    }
     switch(choiceCave){
         case 1:
         Slowprint.slowPrintln("As you slowly walk up to the mouth of the cave. It is pitch black inside. Slowly, slowly you enter the cave.\n"
@@ -26,12 +26,9 @@ while (choiceCave != 1 && choiceCave != 2){
         System.out.println("------------Game over------------");
         return true;
 
-
         case 2:
         Slowprint.slowPrintln("You made a wise choice. Now, there is only one way ahead: The city...",2);
         return false;
-
-
         }
     return false;
 }
