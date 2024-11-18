@@ -5,7 +5,7 @@ public class Check {
     private Player player;
     PlayerInput playerinput = new PlayerInput();
 
-public int checkYesNo (){
+public int checkYesNo (Scanner sc){
     //Check av input så det är ett positivt nummer över 0 och mellan 1-2
         int number;
         boolean firstrun = true;

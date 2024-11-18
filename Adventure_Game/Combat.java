@@ -1,7 +1,5 @@
 package Adventure_Game;
-import java.util.InputMismatchException;
 import java.util.Random;
-import java.util.Scanner;
 
 
 public class Combat {
@@ -12,6 +10,7 @@ public class Combat {
     private Player player;
     private Menu menu;
     Check check = new Check();
+    PlayerInput playerinput = new PlayerInput();
 
     public Combat (Player player) {
         this.player = player;
@@ -43,17 +42,13 @@ public class Combat {
         
     }
 
-    private int actionChoice(String choiceMessage, String choiceOption) {
-        System.out.println(choiceMessage);
-        System.out.println(choiceOption);
-
-        check.checkYesNo();
-
-    }
 
     public void combat(int getStrength, int getHealth, Monster monster) {
         
-        actionChoice("Would you like to fight, or try to run away?", "Press 1 to fight, or press 2 to run away.");
+        System.out.println("Would you like to fight or run away?");
+        System.out.println("Press 1 to fight, and press 2 to run away");
+
+        choice = check.checkYesNo(playerinput.getScanner());
 
         outerSwitch:
         switch (choice) {
@@ -78,8 +73,11 @@ public class Combat {
 
                         System.out.println("Your current health: " + player.getHealth());
 
-                        actionChoice("Would you like to try again, or run away?", "Press 1 to try again, or press 2 to run away.");
-                        
+                        System.out.println("Would you like to try again, or run away?");
+                        System.out.println("Press 1 to fight, and press 2 to run away");
+
+                        choice = check.checkYesNo(playerinput.getScanner());
+
                         innerSwitch:
                         switch (choice) {
                             case 2:
