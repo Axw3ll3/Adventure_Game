@@ -3,13 +3,15 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Combat {
     private Random random = new Random();
-    private Scanner sc = new Scanner(System.in);
+
     private int choice;
     Slowprint slowprint = new Slowprint();
     private Player player;
     private Menu menu;
+    Check check = new Check();
 
     public Combat (Player player) {
         this.player = player;
@@ -27,9 +29,9 @@ public class Combat {
         } else if (strengthDifference == 2) {
             successChance = 83.3;
         } else if (strengthDifference == -1) {
-            successChance = 33.3;
+            successChance = 40;
         } else if (strengthDifference == -2) {
-            successChance = 16.7;
+            successChance = 25;
         } else if (strengthDifference > 2) {
             successChance = 100.0;
         } else {
@@ -45,13 +47,8 @@ public class Combat {
         System.out.println(choiceMessage);
         System.out.println(choiceOption);
 
-        try {
-            choice = sc.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("Invalid input. Please enter 1 or 2.");
-            sc.nextLine();
-        }
-        return choice;
+        check.checkYesNo();
+
     }
 
     public void combat(int getStrength, int getHealth, Monster monster) {

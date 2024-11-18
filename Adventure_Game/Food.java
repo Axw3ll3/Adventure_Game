@@ -35,7 +35,7 @@ public class Food {
                     System.out.println("[2] No");
         
                     // Kallar på metod för att se att input av användare är en integer
-                   choice = check.checkYesNo(playerinput.getScanner());
+                   choice = check.checkYesNo();
         
                         switch (choice) {
                             case 1:
