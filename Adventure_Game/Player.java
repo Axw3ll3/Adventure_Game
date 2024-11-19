@@ -110,11 +110,7 @@ public class Player {
     }
 
     public void showBackpackItems() {
-            if (backpack != null) {
-                backpack.displayItems();
-            } else {
-                System.out.println("No backpack found.");
-            }
+         backpack.displayItems();
     }
 
     public int getStrength() {
