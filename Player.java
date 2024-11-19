@@ -81,8 +81,8 @@ public class Player {
         }
     }
 
-    public void takeDamage(int damage) {
-        characterInfo.levelUp();
+   public void takeDamage(int damage) {
+        attributes.takeDamage(damage);
     }
 
     public void levelUp() {
