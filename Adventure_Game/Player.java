@@ -83,7 +83,11 @@ public class Player {
 
         }
     }
-
+   
+    public Backpack getBackpack() {
+        return this.backpack;  
+    }
+    
    public void takeDamage(int damage) {
         attributes.takeDamage(damage);
     }
