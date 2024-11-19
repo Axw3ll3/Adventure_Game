@@ -56,9 +56,9 @@ public class FirePlace {
 
     public void ifLit() {
         isLit = true;
-        slowprint.slowPrintln("You've decided to lit the fire.");
+        slowprint.slowPrintln("You've decided to lit the fire.", 2);
         player.reward("intelligence");
-        slowprint.slowPrintln("Unfortunally, you attracted spiders towards your position.");
+        slowprint.slowPrintln("Unfortunally, you attracted spiders towards your position.", 2);
         Spider spider = new Spider();
         Combat combat = new Combat(player);
 
@@ -68,15 +68,15 @@ public class FirePlace {
     }
     public void ifNotLit() {
         isLit = false;
-        slowprint.slowPrintln("You've decided to not lit the fire.");
+        slowprint.slowPrintln("You've decided to not lit the fire.", 2);
         player.takeDamage(1);
-        slowprint.slowPrintln("Due to you not putting up the fire, you've gotten cold and lost a healthpoint. " + "-1 Healthpoint, you still got "+player.getHealth()+ " left");
-        slowprint.slowPrintln("You've moved on without a scratch though, which let's you move on to the next part of the story");
+        slowprint.slowPrintln("Due to you not putting up the fire, you've gotten cold and lost a healthpoint. " + "-1 Healthpoint, you still got "+player.getHealth()+ " left" ,2);
+        slowprint.slowPrintln("You've moved on without a scratch though, which let's you move on to the next part of the story", 2);
 
     }
     public void firePlaceSouvenir() {
         int choice;
-        slowprint.slowPrintln("Do you want to take a burnt wood as a souvenir from the fireplace?");
+        slowprint.slowPrintln("Do you want to take a burnt wood as a souvenir from the fireplace?", 2);
         while (true) {
             slowprint.slowPrintln("[1] Yes");
             slowprint.slowPrintln("[2] No");

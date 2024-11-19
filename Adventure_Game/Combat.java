@@ -11,6 +11,7 @@ public class Combat {
     private Menu menu;
     Check check = new Check();
     PlayerInput playerinput = new PlayerInput();
+    
 
     public Combat (Player player) {
         this.player = player;
@@ -57,21 +58,21 @@ public class Combat {
                 player.reward("speed");
                 break;
             case 1:
-                while (player.getHealth() > 0) {
+                while (attributes.getHealth() > 0) {
                     boolean success = checkSuccess(getStrength, monster.getMonsterStrength());
                     if (success) {
                         slowprint.slowPrintln(monster.getKilledByPlayer(), 3);
                         player.reward("strength");
                         break;
                     } else {
-                        if (player.getHealth() < 2) {
+                        if (attributes.getHealth() < 2) {
                             slowprint.slowPrintln(monster.getKillPlayer(), 3);
                             menu.gameOver();
                         }
                         slowprint.slowPrintln(monster.getHitPlayer(), 3);
-                        player.takeDamage(1);
+                        attributes.takeDamage(1);
 
-                        System.out.println("Your current health: " + player.getHealth());
+                        System.out.println("Your current health: " + attributes.getHealth());
 
                         System.out.println("Would you like to try again, or run away?");
                         System.out.println("Press 1 to fight, and press 2 to run away");
