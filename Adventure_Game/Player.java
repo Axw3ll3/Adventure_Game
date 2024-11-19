@@ -9,7 +9,7 @@ public class Player {
     private Attributes attributes;
     private Backpack backpack;
 
-    public Player(String name, int age, int backpackCapacity) {
+    public Player(String name, int age, int backpackCapacity, int health, int speed, int strength, int intelligence) {
         this.characterInfo = new CharacterInfo(name, age);
         this.attributes = new Attributes(3, 0, 0, 0);
         this.backpack =  new Backpack(backpackCapacity);
