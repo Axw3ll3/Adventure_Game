@@ -1,5 +1,4 @@
 package Adventure_Game;
-import java.text.AttributedCharacterIterator.Attribute;
 import java.util.Scanner;
 
 

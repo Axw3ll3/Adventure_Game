@@ -91,7 +91,7 @@ public void gameOver(){
 //-----------------------------------------------MAIN --------------------------------------------------    
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        Player player = new Player("Default name", 21 ,3);
+        Player player = new Player("Default name", 17 ,3, 3 , 0, 0, 0);
         Menu menu = new Menu(player);
         menu.start();
         player.setName(s);
