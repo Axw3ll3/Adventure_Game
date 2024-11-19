@@ -3,18 +3,21 @@ import java.util.Scanner;
 
 
 public class FirePlace {
-    //Glöm inte att ta bort health, intellegence och slowprint sen.
+    //Glöm inte att ta bort slowprint.
     private boolean isLit;
     Slowprint slowprint = new Slowprint();
     Scanner scanner = new Scanner(System.in);
     private Player player;
-    PlayerInput playerinput = new PlayerInput();
-    Check check = new Check();
-    Backpack backpack = new Backpack(3);
-
+    private PlayerInput playerinput;
+    private Check check; 
+    private Backpack backpack;
+    
     public FirePlace(Player player) {
         this.isLit = false;
         this.player = player;
+        this.check=check;
+        this.backpack=backpack;
+        this.playerinput=playerinput;
     }
 
     public void arrivalAtFirePlace(){

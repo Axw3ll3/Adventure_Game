@@ -13,7 +13,6 @@ public class Puzzle {
     private Player player;
     private PlayerInput playerinput;
     private Check check;
-    private Scanner sc;
     private Backpack backpack;
 
 

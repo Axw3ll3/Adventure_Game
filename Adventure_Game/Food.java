@@ -1,6 +1,5 @@
 package Adventure_Game;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Food {
     //Glöm inte ta bort Slowprint
@@ -12,7 +11,6 @@ public class Food {
     private Player player;
     private PlayerInput playerinput;
     private Check check;
-    private Scanner sc;
     private Backpack backpack;
 
 
@@ -20,7 +18,6 @@ public class Food {
         this.player=player;
         this.playerinput=playerinput;
         this.check=check;
-        this.sc=sc;
         this.backpack=backpack;
         this.menu=menu;
     }
