@@ -2,7 +2,6 @@ package Adventure_Game;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Riddle {
     Random random = new Random();
@@ -10,13 +9,11 @@ public class Riddle {
     private Player player;
     private PlayerInput playerinput;
     private Check check;
-    private Scanner sc;
 
     public Riddle() {
         this.player=player;
         this.playerinput=playerinput;
         this.check=check;
-        this.sc=sc;
     }
 
     public void arrivalAtRiddle(){
@@ -61,14 +58,13 @@ public class Riddle {
     
                 //Hämtar användarens val och kollar om det är korrekt
                 slowprint.slowPrintln("Enter your choice of answer on the keypad: ");
-                if (options.get(check.checkChoices(sc) - 1) == correctAnswer) {
+                if (options.get(check.checkChoices(playerinput.getScanner()) - 1) == correctAnswer) {
                     ifRiddleSolved();
                 } else {
                     ifRiddleNotSolved();    
                 }
                 System.out.println();
             }
-            sc.close();
         }
     
         //Metod som räknar ut svar baserat på operator

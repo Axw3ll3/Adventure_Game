@@ -5,15 +5,14 @@ public class Food {
     //Glöm inte ta bort Slowprint
     Random r = new Random();
     int random = r.nextInt(2);
-    private Slowprint slowprint;
-    Spider spider = new Spider();
-    private Menu menu;
     private Player player;
-    private PlayerInput playerinput;
-    private Check check;
+    private Slowprint slowprint;
+    Menu menu = new Menu (player);
+    PlayerInput playerinput = new PlayerInput();
+    Check check = new Check();
 
 
-    public Food() {
+    public Food(Player player) {
         this.player=player;
         this.playerinput=playerinput;
         this.check=check;
@@ -21,7 +20,7 @@ public class Food {
     }
 
     public void findingTheFood() {
-    slowprint.slowPrintln("\nIn the silent, dusty policestation, you finally solve the puzzle. With a soft click, a small hidden compartment opens up beneath your feet. \nInside were a few cans of beans. \nDo you want to eat the beans?");
+    slowprint.slowPrintln("\nIn the silent, dusty policestation, you finally solve the puzzle. With a soft click, a small hidden compartment opens up beneath your feet. \nInside were a few cans of beans. \nDo you want to eat the beans?", 2);
     choiceOfEating();
 }
 
@@ -38,11 +37,11 @@ public class Food {
         
                         switch (choice) {
                             case 1:
-                                eatingTheFood();
+                                eatingTheFood(player);
                                 break;
         
                             case 2:
-                                notEatingTheFood();
+                                notEatingTheFood(player);
                                 break;
                         
                         }
@@ -53,11 +52,11 @@ public class Food {
     
     
 
-    public void eatingTheFood() {
+    public void eatingTheFood(Player player) {
         int random = r.nextInt(2);
         if (random == 0) {
             player.takeDamage(1);
-            slowprint.slowPrintln("The beans you found are old and made you get food poisoning, and this makes you lose -1 Healthpoint. You still got " +player.getHealth()+ " left.");
+            slowprint.slowPrintln("The beans you found are old and made you get food poisoning, and this makes you lose -1 Healthpoint. You still got " +player.getHealth()+ " left.",2 );
             if (player.getHealth() == 0) {
                 menu.gameOver();
             }
@@ -66,13 +65,13 @@ public class Food {
             }
         }
         else if (random == 1) {
-            slowprint.slowPrintln("You've found yourself some fresh beans, which makes your strenght go up by 1 due to you getting much needed energy.");
+            slowprint.slowPrintln("You've found yourself some fresh beans, which makes your strenght go up by 1 due to you getting much needed energy.", 2);
             player.reward("strenght");
             foodSouvenir();
         }
     }
 
-    public void notEatingTheFood() {
+    public void notEatingTheFood(Player player) {
         player.reward("intelligence");
         slowprint.slowPrintln("Smart choice to not eat food in an abandoned policestation, this makes you gain +1 in intelligence.");
         
@@ -92,6 +91,7 @@ public class Food {
                     case 1:
                         System.out.println("You've decided to keep the empty can as a souvenir");
                         player.addItemToBackpack("Empty can");
+                        player.showBackpackItems();
                         break;
                     case 2:
                        System.out.println("You've decided to not pick up a souvenir from the policestation.");
