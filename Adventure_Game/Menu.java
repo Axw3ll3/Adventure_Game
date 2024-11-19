@@ -2,11 +2,11 @@ package Adventure_Game;
 import java.util.Scanner;
 public class Menu {
 private Player player;
-
+private Backpack backpack;
 
 public Menu(Player player){
     this.player = player;
-
+    this.backpack=backpack;
 }
 public void start(){
     System.out.println("WELCOME TO THE ADVENTUREGAME BY VELVETVIBE");
@@ -85,12 +85,13 @@ public void gameOver(){
     Slowprint.slowPrintln("Strength: "+player.getStrength(),2);
     Slowprint.slowPrintln("Speed: "+ player.getSpeed(),2);
     Slowprint.slowPrintln("Intelligence: "+ player.getIntelligence(),2);
+    player.showBackpackItems();
     System.exit(0);
 }
 //-----------------------------------------------MAIN --------------------------------------------------    
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        Player player = new Player("Default name");
+        Player player = new Player("Default name", 21 ,3);
         Menu menu = new Menu(player);
         menu.start();
         player.setName(s);

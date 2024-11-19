@@ -9,10 +9,10 @@ public class Player {
     private Attributes attributes;
     private Backpack backpack;
 
-    public Player(String name, int age, int backpackCapacity) {
+    public Player(String name, int age, int backpackCapacity, int health, int speed, int strength, int intelligence) {
         this.characterInfo = new CharacterInfo(name, age);
         this.attributes = new Attributes(3, 0, 0, 0);
-        this.backpack =  new Backpack(backpackCapacity);
+        this.backpack =  new Backpack(3);
     }
 
     public void setName(Scanner sc) {
@@ -36,8 +36,10 @@ public class Player {
     }
 
     public void setAge(Scanner sc) {
+
+        boolean isValid = false;
        
-        while (true) {
+        while (!isValid) {
             System.out.println("Enter your age: ");
             String inputAge = sc.nextLine();
 
@@ -83,8 +85,8 @@ public class Player {
         }
     }
 
-    public void takeDamage(int damage) {
-        characterInfo.levelUp();
+   public void takeDamage(int damage) {
+        attributes.takeDamage(damage);
     }
 
     public void levelUp() {

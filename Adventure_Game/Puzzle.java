@@ -5,15 +5,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Puzzle {
-    //Glöm inte ta bort scanner, slowprint och food sen.
-    Scanner scanner = new Scanner(System.in);
+    //Glöm inte ta bort slowprint.
     Random random = new Random();
-    Slowprint slowprint = new Slowprint();
+    private Slowprint slowprint;
     private Food food;
     private Player player;
     private PlayerInput playerinput;
-    private Check check;
     private Scanner sc;
+    private Check check;
+    private Backpack backpack;
 
 
 
@@ -23,6 +23,7 @@ public class Puzzle {
         this.check=check;
         this.sc=sc;
         this.playerinput=playerinput;
+        this.backpack=backpack;
     }
 
     public void arrivalAtPuzzle() {
@@ -33,6 +34,7 @@ public class Puzzle {
     }
     
     public void ifSolved(){
+        puzzleSouvenir();
         food.findingTheFood();
         food.choiceOfEating();
     }
@@ -66,7 +68,7 @@ public class Puzzle {
             }
             System.out.println();
         }
-        
+        sc.close();
     }
 
     //Metod som räknar ut svar baserat på operator
@@ -90,5 +92,29 @@ public class Puzzle {
         Collections.shuffle(options);
         return options;
     }
+
+    public void puzzleSouvenir() {
+        int choice;
+        slowprint.slowPrintln("Do you want to take a puzzle piece as a souvenir from the hospital?");
+        while (true) {
+            slowprint.slowPrintln("[1] Yes");
+            slowprint.slowPrintln("[2] No");
+
+            // Kallar på metod för att se att input av användare är en integer
+           choice = check.checkYesNo(playerinput.getScanner());
+
+                switch (choice) {
+                    case 1:
+                        System.out.println("You've decided to take a puzzle piece as a souvenir");
+                        backpack.addItem("Puzzle piece");
+                        break;
+                    case 2:
+                       System.out.println("You've decided to not pick up a souvenir from the hospital.");
+                        break;
+                
+                }
+                break;
+            } 
+        }
 
 }    
