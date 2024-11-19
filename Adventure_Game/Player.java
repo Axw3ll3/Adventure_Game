@@ -1,5 +1,4 @@
 package Adventure_Game;
-import java.text.AttributedCharacterIterator.Attribute;
 import java.util.Scanner;
 
 
@@ -12,7 +11,7 @@ public class Player {
     public Player(String name, int age, int backpackCapacity, int health, int speed, int strength, int intelligence) {
         this.characterInfo = new CharacterInfo(name, age);
         this.attributes = new Attributes(3, 0, 0, 0);
-        this.backpack =  new Backpack(3);
+        this.backpack = new Backpack(3);
     }
 
     public void setName(Scanner sc) {
@@ -107,7 +106,11 @@ public class Player {
     }
 
     public void showBackpackItems() {
-        backpack.displayItems();
+            if (backpack != null) {
+                backpack.displayItems();
+            } else {
+                System.out.println("No backpack found.");
+            }
     }
 
     public int getStrength() {

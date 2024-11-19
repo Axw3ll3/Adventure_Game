@@ -1,15 +1,14 @@
 package Adventure_Game;
-import java.util.Scanner;
 
 public class Forest {
-    public Forest(Player player){
+    public Forest(Player player, Backpack backpack){
         System.out.println("----------------------------------------------------------------");
-        FirePlace fireplace = new FirePlace(player);
+        FirePlace fireplace = new FirePlace(player, backpack);
             fireplace.arrivalAtFirePlace(); 
             fireplace.askToLit();
         Cave cave = new Cave(player);
             if(cave.enteringCave()){
-            Menu menu = new Menu(player);
+            Menu menu = new Menu(player, backpack);
             menu.gameOver();
         }
 

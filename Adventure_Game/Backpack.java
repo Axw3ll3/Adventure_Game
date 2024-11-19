@@ -1,10 +1,9 @@
 package Adventure_Game;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Backpack {
-    private List<String> items;  //En lista för att lagra föremål
+    private ArrayList<String> items;  //En lista för att lagra föremål
     private int maxCapacity;
 
     //
@@ -27,8 +26,16 @@ public class Backpack {
     }
 
     public void displayItems() {
-        System.out.println("Backpack items: " + items);
-        
+        if (items.isEmpty()) {
+            System.out.println("Backpack is empty.");
+        } 
+        else {
+            System.out.println("Backpack contains:");
+            for (String item : items) {
+                System.out.println("- " + item);
+            }
+        }
+            
     }
 
     public boolean isBackpackFull() {
