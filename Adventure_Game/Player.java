@@ -12,7 +12,7 @@ public class Player {
     public Player(String name, int age, int backpackCapacity) {
         this.characterInfo = new CharacterInfo(name, age);
         this.attributes = new Attributes(3, 0, 0, 0);
-        this.backpack =  new Backpack(backpackCapacity);
+        this.backpack =  new Backpack(3);
     }
 
     public void setName(Scanner sc) {
