@@ -55,7 +55,7 @@ public class Food {
         int random = r.nextInt(2);
         if (random == 0) {
             player.takeDamage(1);
-            slowprint.slowPrintln("The beans you found are old and made you get food poisoning, and this makes you lose -1 Healthpoint. You still got " +player.getHealth()+ " left.",2 );
+            slowprint.slowPrintln("The beans you found are old and made you get food poisoning, and this makes you lose -1 Healthpoint. You got " +player.getHealth()+ " left.",2 );
             if (player.getHealth() == 0) {
                 menu.gameOver();
             }

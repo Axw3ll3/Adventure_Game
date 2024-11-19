@@ -65,7 +65,7 @@ public class Combat {
                     } else {
                         if (player.getHealth() < 2) {
                             slowprint.slowPrintln(monster.getKillPlayer(), 3);
-                            player.setHealth(0);
+                            player.setHealth();
                             menu.gameOver();
                         }
                         slowprint.slowPrintln(monster.getHitPlayer(), 3);

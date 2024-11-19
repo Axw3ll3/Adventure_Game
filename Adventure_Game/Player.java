@@ -131,7 +131,7 @@ public class Player {
     }
 
     public void setHealth(){
-        attributes.setHealth(3);
+        attributes.setHealth(0);
     }
 
 
