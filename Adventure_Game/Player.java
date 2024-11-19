@@ -36,8 +36,10 @@ public class Player {
     }
 
     public void setAge(Scanner sc) {
+
+        boolean isValid = false;
        
-        while (true) {
+        while (!isValid) {
             System.out.println("Enter your age: ");
             String inputAge = sc.nextLine();
 
