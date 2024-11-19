@@ -6,9 +6,9 @@ public class FirePlace {
     private boolean isLit;
     private Slowprint slowprint;
     private Player player;
-    private PlayerInput playerinput;
-    private Check check; 
-    private Backpack backpack;
+    PlayerInput playerinput = new PlayerInput();
+    Check check = new Check(); 
+    Backpack backpack = new Backpack(3);
     
     public FirePlace(Player player) {
         this.isLit = false;
