@@ -26,7 +26,16 @@ public class Backpack {
     }
 
     public void displayItems() {
-        System.out.println("Backpack items: " + items); 
+        if (items.isEmpty()) {
+            System.out.println("Backpack is empty.");
+        } 
+        else {
+            System.out.println("Backpack contains:");
+            for (String item : items) {
+                System.out.println("- " + item);
+            }
+        }
+            
     }
 
     public boolean isBackpackFull() {

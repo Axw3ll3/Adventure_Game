@@ -4,7 +4,7 @@ public class Menu {
 private Player player;
 private Backpack backpack;
 
-public Menu(Player player){
+public Menu(Player player, Backpack backpack){
     this.player = player;
     this.backpack=backpack;
 }
@@ -50,7 +50,7 @@ public boolean checkCorF(){
         return true;
 
         case 2:
-        Forest f = new Forest(player);
+        Forest f = new Forest(player, backpack);
         City cit = new City(player);
         System.out.println();
         return false;
@@ -92,7 +92,7 @@ public void gameOver(){
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         Player player = new Player("Default name", 17 ,3, 3 , 0, 0, 0);
-        Menu menu = new Menu(player);
+        Menu menu = new Menu(player, backpack);
         menu.start();
         player.setName(s);
         player.setAge(s);

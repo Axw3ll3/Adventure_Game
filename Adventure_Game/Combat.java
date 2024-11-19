@@ -4,18 +4,18 @@ import java.util.Random;
 
 public class Combat {
     private Random random = new Random();
-
     private int choice;
     Slowprint slowprint = new Slowprint();
     private Player player;
-    private Menu menu;
+    private Backpack backpack;
     Check check = new Check();
     PlayerInput playerinput = new PlayerInput();
+    private Menu menu;
     
 
-    public Combat (Player player) {
+    public Combat (Player player, Backpack backpack) {
         this.player = player;
-        this.menu = menu;
+        this.backpack = backpack;
     }
 
     public boolean checkSuccess(int getStrength, int getMonsterStrength){
@@ -29,7 +29,7 @@ public class Combat {
         } else if (strengthDifference == 2) {
             successChance = 83.3;
         } else if (strengthDifference == -1) {
-            successChance = 40;
+            successChance = 0;
         } else if (strengthDifference == -2) {
             successChance = 25;
         } else if (strengthDifference > 2) {
