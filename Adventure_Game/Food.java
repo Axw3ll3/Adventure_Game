@@ -5,7 +5,7 @@ public class Food {
     //Glöm inte ta bort Slowprint
     Random r = new Random();
     int random = r.nextInt(2);
-    Slowprint slowprint = new Slowprint();
+    private Slowprint slowprint;
     Spider spider = new Spider();
     private Menu menu;
     private Player player;

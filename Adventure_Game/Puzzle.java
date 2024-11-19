@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class Puzzle {
     //Glöm inte ta bort slowprint.
-    Scanner scanner = new Scanner(System.in);
     Random random = new Random();
-    Slowprint slowprint = new Slowprint();
+    private Slowprint slowprint;
     private Food food;
     private Player player;
     private PlayerInput playerinput;
+    private Scanner sc;
     private Check check;
     private Backpack backpack;
 
@@ -68,7 +68,7 @@ public class Puzzle {
             }
             System.out.println();
         }
-        
+        sc.close();
     }
 
     //Metod som räknar ut svar baserat på operator

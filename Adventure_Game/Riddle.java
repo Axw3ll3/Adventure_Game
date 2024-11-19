@@ -5,9 +5,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Riddle {
-    Scanner scanner = new Scanner(System.in);
     Random random = new Random();
-    Slowprint slowprint = new Slowprint();
+    private Slowprint slowprint;
     private Player player;
     private PlayerInput playerinput;
     private Check check;
@@ -33,7 +32,6 @@ public class Riddle {
     public void ifRiddleSolved() {
         slowprint.slowPrintln("You've solved the numeric riddle the door opens up. You run towards freedom!");
         riddleSouvenir();
-        
     }
 
     public void ifRiddleNotSolved(){
@@ -44,7 +42,6 @@ public class Riddle {
             }
         else {
             slowprint.slowPrintln("You have no health left and have unfortunally died.");
-
         }
     }
 
@@ -73,7 +70,7 @@ public class Riddle {
                 }
                 System.out.println();
             }
-            scanner.close();
+            sc.close();
         }
     
         //Metod som räknar ut svar baserat på operator

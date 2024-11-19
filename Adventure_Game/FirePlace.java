@@ -1,12 +1,10 @@
 package Adventure_Game;
-import java.util.Scanner;
 
 
 public class FirePlace {
     //Glöm inte att ta bort slowprint.
     private boolean isLit;
-    Slowprint slowprint = new Slowprint();
-    Scanner scanner = new Scanner(System.in);
+    private Slowprint slowprint;
     private Player player;
     private PlayerInput playerinput;
     private Check check; 
