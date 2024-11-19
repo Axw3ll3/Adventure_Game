@@ -7,15 +7,13 @@ public class Combat {
     private int choice;
     Slowprint slowprint = new Slowprint();
     private Player player;
-    private Backpack backpack;
     Check check = new Check();
     PlayerInput playerinput = new PlayerInput();
     private Menu menu;
     
 
-    public Combat (Player player, Backpack backpack) {
+    public Combat (Player player) {
         this.player = player;
-        this.backpack = backpack;
     }
 
     public boolean checkSuccess(int getStrength, int getMonsterStrength){
@@ -29,7 +27,7 @@ public class Combat {
         } else if (strengthDifference == 2) {
             successChance = 83.3;
         } else if (strengthDifference == -1) {
-            successChance = 0;
+            successChance = 40;
         } else if (strengthDifference == -2) {
             successChance = 25;
         } else if (strengthDifference > 2) {

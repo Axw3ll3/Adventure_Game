@@ -11,14 +11,12 @@ public class Riddle {
     private PlayerInput playerinput;
     private Check check;
     private Scanner sc;
-    private Backpack backpack;
 
     public Riddle() {
         this.player=player;
         this.playerinput=playerinput;
         this.check=check;
         this.sc=sc;
-        this.backpack=backpack;
     }
 
     public void arrivalAtRiddle(){
@@ -107,7 +105,7 @@ public class Riddle {
                     switch (choice) {
                         case 1:
                             System.out.println("You've decided to pick up the enter key as a souvenir");
-                            backpack.addItem("Enter key");
+                            player.addItemToBackpack("Enter key");
                             break;
                         case 2:
                            System.out.println("You've decided to not pick up a souvenir from the mall.");

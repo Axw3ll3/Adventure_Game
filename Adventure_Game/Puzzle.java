@@ -13,7 +13,7 @@ public class Puzzle {
     private PlayerInput playerinput;
     private Scanner sc;
     private Check check;
-    private Backpack backpack;
+
 
 
 
@@ -23,7 +23,6 @@ public class Puzzle {
         this.check=check;
         this.sc=sc;
         this.playerinput=playerinput;
-        this.backpack=backpack;
     }
 
     public void arrivalAtPuzzle() {
@@ -106,7 +105,7 @@ public class Puzzle {
                 switch (choice) {
                     case 1:
                         System.out.println("You've decided to take a puzzle piece as a souvenir");
-                        backpack.addItem("Puzzle piece");
+                        player.addItemToBackpack("Puzzle piece");
                         break;
                     case 2:
                        System.out.println("You've decided to not pick up a souvenir from the hospital.");

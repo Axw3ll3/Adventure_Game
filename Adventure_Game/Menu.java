@@ -2,11 +2,10 @@ package Adventure_Game;
 import java.util.Scanner;
 public class Menu {
 private Player player;
-private Backpack backpack;
 
-public Menu(Player player, Backpack backpack){
+public Menu(Player player){
     this.player = player;
-    this.backpack=backpack;
+
 }
 public void start(){
     System.out.println("WELCOME TO THE ADVENTUREGAME BY VELVETVIBE");
@@ -50,7 +49,7 @@ public boolean checkCorF(){
         return true;
 
         case 2:
-        Forest f = new Forest(player, backpack);
+        Forest f = new Forest(player);
         City cit = new City(player);
         System.out.println();
         return false;
@@ -92,7 +91,7 @@ public void gameOver(){
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         Player player = new Player("Default name", 17 ,3, 3 , 0, 0, 0);
-        Menu menu = new Menu(player, backpack);
+        Menu menu = new Menu(player);
         menu.start();
         player.setName(s);
         player.setAge(s);

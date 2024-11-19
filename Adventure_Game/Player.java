@@ -83,7 +83,11 @@ public class Player {
 
         }
     }
-
+   
+    public Backpack getBackpack() {
+        return this.backpack;  
+    }
+    
    public void takeDamage(int damage) {
         attributes.takeDamage(damage);
     }
@@ -106,11 +110,7 @@ public class Player {
     }
 
     public void showBackpackItems() {
-            if (backpack != null) {
-                backpack.displayItems();
-            } else {
-                System.out.println("No backpack found.");
-            }
+         backpack.displayItems();
     }
 
     public int getStrength() {

@@ -8,13 +8,11 @@ public class FirePlace {
     private Player player;
     PlayerInput playerinput = new PlayerInput();
     Check check = new Check(); 
-    private Backpack backpack;
     
-    public FirePlace(Player player, Backpack backpack) {
+    public FirePlace(Player player) {
         this.isLit = false;
         this.player = player;
         this.check=check;
-        this.backpack=backpack;
         this.playerinput=playerinput;
     }
 
@@ -60,7 +58,7 @@ public class FirePlace {
         player.reward("intelligence");
         slowprint.slowPrintln("Unfortunally, you attracted spiders towards your position.", 2);
         Spider spider = new Spider();
-        Combat combat = new Combat(player, backpack);
+        Combat combat = new Combat(player);
 
         slowprint.slowPrintln(spider.getDescription(), 2);
         combat.combat(player.getStrength(), player.getHealth(), spider);
@@ -87,7 +85,7 @@ public class FirePlace {
                 switch (choice) {
                     case 1:
                         System.out.println("You've decided to pick up burnt wood as a souvenir");
-                        backpack.addItem("Burnt wood");
+                        player.addItemToBackpack("Burnt wood");
                         player.showBackpackItems();
                         break;
                     case 2:

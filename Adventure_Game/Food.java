@@ -11,14 +11,12 @@ public class Food {
     private Player player;
     private PlayerInput playerinput;
     private Check check;
-    private Backpack backpack;
 
 
     public Food() {
         this.player=player;
         this.playerinput=playerinput;
         this.check=check;
-        this.backpack=backpack;
         this.menu=menu;
     }
 
@@ -93,7 +91,7 @@ public class Food {
                 switch (choice) {
                     case 1:
                         System.out.println("You've decided to keep the empty can as a souvenir");
-                        backpack.addItem("Empty can");
+                        player.addItemToBackpack("Empty can");
                         break;
                     case 2:
                        System.out.println("You've decided to not pick up a souvenir from the policestation.");
