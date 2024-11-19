@@ -1,5 +1,4 @@
 package Adventure_Game;
-import java.util.Scanner;
 
 public class Policestation {
     PlayerInput playerinput = new PlayerInput();
@@ -10,7 +9,6 @@ public class Policestation {
         this.check=check;
     }
     public boolean ifPolicestation(Player player){
-        Scanner s = new Scanner(System.in);
         System.out.println("----------------------------------------------------------------");
         Slowprint.slowPrintln("The nearest building is the policestation. You make a run for it. \n"
         + "Perhaps inside you can find something useful. The curtains inside are blocking the windows, \n "

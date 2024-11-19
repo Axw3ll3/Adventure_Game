@@ -31,8 +31,8 @@ public class Puzzle {
     
     public void ifSolved(){
         puzzleSouvenir();
-        food.findingTheFood();
-        food.choiceOfEating();
+        food.findingTheFood(player);
+        food.choiceOfEating(player);
     }
 
 

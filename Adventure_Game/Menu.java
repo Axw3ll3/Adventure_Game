@@ -80,7 +80,7 @@ public boolean choiceMorH(){
 
 public void gameOver(){
     Slowprint.slowPrintln("-------------Results: -------------",2);
-    Slowprint.slowPrintln("Health: " + player.getHealth(),2);
+    Slowprint.slowPrintln("Health: " +player.getHealth(), 2);
     Slowprint.slowPrintln("Strength: "+player.getStrength(),2);
     Slowprint.slowPrintln("Speed: "+ player.getSpeed(),2);
     Slowprint.slowPrintln("Intelligence: "+ player.getIntelligence(),2);

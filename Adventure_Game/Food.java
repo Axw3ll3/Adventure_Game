@@ -19,13 +19,12 @@ public class Food {
         this.menu=menu;
     }
 
-    public void findingTheFood() {
+    public void findingTheFood(Player player) {
     slowprint.slowPrintln("\nIn the silent, dusty policestation, you finally solve the puzzle. With a soft click, a small hidden compartment opens up beneath your feet. \nInside were a few cans of beans. \nDo you want to eat the beans?", 2);
-    choiceOfEating();
 }
 
     //Menymetod
-    public void choiceOfEating(){
+    public void choiceOfEating(Player player){
         int choice;
                 //Visar meny och hämtar användarens val.
                 while (true) {
@@ -61,13 +60,13 @@ public class Food {
                 menu.gameOver();
             }
             else {
-                foodSouvenir();
+                foodSouvenir(player);
             }
         }
         else if (random == 1) {
             slowprint.slowPrintln("You've found yourself some fresh beans, which makes your strenght go up by 1 due to you getting much needed energy.", 2);
-            player.reward("strenght");
-            foodSouvenir();
+            player.reward("strength");
+            foodSouvenir(player);
         }
     }
 
@@ -77,7 +76,7 @@ public class Food {
         
     }
 
-    public void foodSouvenir() {
+    public void foodSouvenir(Player player) {
         int choice;
         slowprint.slowPrintln("Do you want to keep the can as a souvenir from the policestation?");
         while (true) {
