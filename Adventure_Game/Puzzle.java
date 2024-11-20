@@ -2,45 +2,42 @@ package Adventure_Game;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Puzzle {
     //Glöm inte ta bort slowprint.
     Random random = new Random();
     private Slowprint slowprint;
-    private Food food;
     private Player player;
-    private PlayerInput playerinput;
-    private Scanner sc;
-    private Check check;
+    PlayerInput playerinput = new PlayerInput();
+    Check check = new Check();
+    Food food = new Food (player); 
 
 
 
 
-    public Puzzle() {
+    public Puzzle(Player player) {
         this.food=food;
         this.player=player;
         this.check=check;
-        this.sc=sc;
         this.playerinput=playerinput;
     }
 
     public void arrivalAtPuzzle() {
         slowprint.slowPrintln("You stand alone in the dusty police station, facing an old filing cabinet. "
         + "\nYou walk out of the office and out in the hallways. As you navigate through the dimly lit hallways, you find a room marked 'Survival'. " 
-        + "\nInside, there is a large, rusted puzzle with a numeric combination. It reads:");
+        + "\nInside, there is a large, rusted puzzle with a numeric combination. It reads:", 2);
         questionAndChoice();
     }
     
     public void ifSolved(){
         puzzleSouvenir();
-        food.findingTheFood();
-        food.choiceOfEating();
+        food.findingTheFood(player);
+        food.choiceOfEating(player);
     }
 
 
     public void ifNotSolved(){
-        slowprint.slowPrintln("You couldn't come up with the answer to the puzzle (equation) and decide to leave the policestation due to you already exploring the whole place.");
+        slowprint.slowPrintln("You couldn't come up with the answer to the puzzle (equation) and decide to leave the policestation due to you already exploring the whole place.", 2);
     }
 
 
@@ -60,14 +57,13 @@ public class Puzzle {
 
             //Hämtar användarens val och kollar om det är korrekt
             slowprint.slowPrintln("Enter your choice of answer on the keypad: ");
-            if (options.get(check.checkChoices(sc) - 1) == correctAnswer) {
+            if (options.get(check.checkChoices(playerinput.getScanner()) - 1) == correctAnswer) {
                 ifSolved();
             } else {
                 ifNotSolved();    
             }
             System.out.println();
         }
-        sc.close();
     }
 
     //Metod som räknar ut svar baserat på operator
@@ -94,7 +90,7 @@ public class Puzzle {
 
     public void puzzleSouvenir() {
         int choice;
-        slowprint.slowPrintln("Do you want to take a puzzle piece as a souvenir from the hospital?");
+        slowprint.slowPrintln("Do you want to take a puzzle piece as a souvenir from the policestation?", 2);
         while (true) {
             slowprint.slowPrintln("[1] Yes");
             slowprint.slowPrintln("[2] No");
@@ -106,9 +102,10 @@ public class Puzzle {
                     case 1:
                         System.out.println("You've decided to take a puzzle piece as a souvenir");
                         player.addItemToBackpack("Puzzle piece");
+                        player.showBackpackItems();
                         break;
                     case 2:
-                       System.out.println("You've decided to not pick up a souvenir from the hospital.");
+                       System.out.println("You've decided to not pick up a souvenir from the policestation.");
                         break;
                 
                 }

@@ -2,37 +2,34 @@ package Adventure_Game;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Riddle {
     Random random = new Random();
     private Slowprint slowprint;
     private Player player;
-    private PlayerInput playerinput;
-    private Check check;
-    private Scanner sc;
+    PlayerInput playerinput = new PlayerInput();
+    Check check = new Check(); 
 
-    public Riddle() {
+    public Riddle(Player player) {
         this.player=player;
         this.playerinput=playerinput;
         this.check=check;
-        this.sc=sc;
     }
 
     public void arrivalAtRiddle(){
         slowprint.slowPrintln("After an epic battle with the rabiesdog - fearsome, rabid creatures that terrorized the whole hospital - you find yourself in an empty and quiet hospital. "
         + "You navigate through the dimly lit hallways. In the horizon you spot a door with keypad whose got a display above it. "
-        + "\nYou run towards it, on the display it says:");
+        + "\nYou run towards it, on the display it says:", 2);
         questionAndChoice();
 
     }
 
-    public void ifRiddleSolved() {
+    public void ifRiddleSolved(Player player) {
         slowprint.slowPrintln("You've solved the numeric riddle the door opens up. You run towards freedom!");
-        riddleSouvenir();
+        riddleSouvenir(player);
     }
 
-    public void ifRiddleNotSolved(){
+    public void ifRiddleNotSolved(Player player){
         if (player.getHealth() > 1) {
                 player.takeDamage(1);;
                 slowprint.slowPrintln("Wrong answer. You got " +player.getHealth()+ " health remaining.");
@@ -61,14 +58,13 @@ public class Riddle {
     
                 //Hämtar användarens val och kollar om det är korrekt
                 slowprint.slowPrintln("Enter your choice of answer on the keypad: ");
-                if (options.get(check.checkChoices(sc) - 1) == correctAnswer) {
-                    ifRiddleSolved();
+                if (options.get(check.checkChoices(playerinput.getScanner()) - 1) == correctAnswer) {
+                    ifRiddleSolved(player);
                 } else {
-                    ifRiddleNotSolved();    
+                    ifRiddleNotSolved(player);    
                 }
                 System.out.println();
             }
-            sc.close();
         }
     
         //Metod som räknar ut svar baserat på operator
@@ -92,9 +88,9 @@ public class Riddle {
             Collections.shuffle(options);
             return options;
         }
-        public void riddleSouvenir() {
+        public void riddleSouvenir(Player player) {
             int choice;
-            slowprint.slowPrintln("Do you want to take loosened up Enter key as a souvenir from the mall?");
+            slowprint.slowPrintln("Do you want to take loosened Enter key as a souvenir from the mall?");
             while (true) {
                 slowprint.slowPrintln("[1] Yes");
                 slowprint.slowPrintln("[2] No");

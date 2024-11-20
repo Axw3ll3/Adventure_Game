@@ -43,7 +43,7 @@ public class Combat {
 
 
     public void combat(int getStrength, int getHealth, Monster monster) {
-        
+        Menu menu = new Menu(player);
         System.out.println("Would you like to fight or run away?");
         System.out.println("Press 1 to fight, and press 2 to run away");
 
@@ -65,6 +65,7 @@ public class Combat {
                     } else {
                         if (player.getHealth() < 2) {
                             slowprint.slowPrintln(monster.getKillPlayer(), 3);
+                            player.setHealth();
                             menu.gameOver();
                         }
                         slowprint.slowPrintln(monster.getHitPlayer(), 3);

@@ -7,6 +7,7 @@ public class Player {
     private CharacterInfo characterInfo;
     private Attributes attributes;
     private Backpack backpack;
+               
 
     public Player(String name, int age, int backpackCapacity, int health, int speed, int strength, int intelligence) {
         this.characterInfo = new CharacterInfo(name, age);
@@ -129,7 +130,9 @@ public class Player {
         return characterInfo.getName();
     }
 
-
+    public void setHealth(){
+        attributes.setHealth(0);
+    }
 
 
     }
