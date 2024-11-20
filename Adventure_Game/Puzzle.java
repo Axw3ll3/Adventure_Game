@@ -30,6 +30,8 @@ public class Puzzle {
     }
     
     public void ifSolved(){
+        System.out.println("You've got +1 intelligence due to solving the puzzle");
+        player.reward("intelligence");
         puzzleSouvenir();
         food.findingTheFood(player);
         food.choiceOfEating(player);

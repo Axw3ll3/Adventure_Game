@@ -64,7 +64,7 @@ public class Food {
             }
         }
         else if (random == 1) {
-            slowprint.slowPrintln("You've found yourself some fresh beans, which makes your strenght go up by 1 due to you getting much needed energy.", 2);
+            slowprint.slowPrintln("You've found yourself some fresh beans, which makes your strength go up by 1 due to you getting much needed energy.", 2);
             player.reward("strength");
             foodSouvenir(player);
         }
