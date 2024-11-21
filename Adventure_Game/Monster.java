@@ -6,13 +6,15 @@ public abstract class Monster {
     private String hitPlayer;
     private String killPlayer;
     private String killedByPlayer;
+    private boolean isEscapable;
 
-    public Monster(int monsterStrength, String description, String hitPlayer, String killPlayer, String killedByPlayer){
+    public Monster(int monsterStrength, String description, String hitPlayer, String killPlayer, String killedByPlayer, boolean isEscapable){
         this.monsterStrength = monsterStrength;
         this.description = description;
         this.killPlayer = killPlayer;
         this.hitPlayer = hitPlayer;
         this.killedByPlayer = killedByPlayer;
+        this.isEscapable = isEscapable;
     }
 
     public int getMonsterStrength() {
@@ -55,4 +57,13 @@ public abstract class Monster {
     public void setKilledByPlayer(String killedByPlayer) {
         this.killedByPlayer = killedByPlayer;
     }
-}   
+
+    public Monster(boolean isEscapable) {
+        this.isEscapable = isEscapable;
+    }
+
+    public boolean isEscapable() {
+        return isEscapable;
+    }
+}
+  

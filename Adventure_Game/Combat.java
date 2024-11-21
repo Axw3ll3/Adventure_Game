@@ -45,57 +45,46 @@ public class Combat {
     public void combat(int getStrength, int getHealth, Monster monster) {
         Menu menu = new Menu(player);
         System.out.println("Would you like to fight or run away?");
-        System.out.println("Press 1 to fight, and press 2 to run away");
+        System.out.println("Press 1 to fight, or press 2 to try and run away");
 
-        choice = check.checkYesNo(playerinput.getScanner());
+        boolean canEscape = monster.isEscapable();
 
-        outerSwitch:
-        switch (choice) {
-            case 2:
+        while (player.getHealth() > 0) {
+    
+            choice = check.checkYesNo(playerinput.getScanner());
+    
+            if (choice == 2 && canEscape) {
                 System.out.println("You run away!");
                 player.reward("speed");
                 break;
-            case 1:
-                while (player.getHealth() > 0) {
+            } else if (choice == 2 && !canEscape) {
+                System.out.println("You can't run away! You must fight.");
+                choice = check.checkYesNo(playerinput.getScanner()); 
+            }
+    
+            switch (choice) {
+                case 1:
                     boolean success = checkSuccess(getStrength, monster.getMonsterStrength());
                     if (success) {
                         slowprint.slowPrintln(monster.getKilledByPlayer(), 3);
                         player.reward("strength");
-                        break;
+                        return;
                     } else {
                         if (player.getHealth() < 2) {
                             slowprint.slowPrintln(monster.getKillPlayer(), 3);
                             player.setHealth();
                             menu.gameOver();
+                            return;
                         }
                         slowprint.slowPrintln(monster.getHitPlayer(), 3);
                         player.takeDamage(1);
-
                         System.out.println("Your current health: " + player.getHealth());
-
-                        System.out.println("Would you like to try again, or run away?");
-                        System.out.println("Press 1 to fight, and press 2 to run away");
-
-                        choice = check.checkYesNo(playerinput.getScanner());
-
-                        innerSwitch:
-                        switch (choice) {
-                            case 2:
-                                System.out.println("You run away!");
-                                player.reward("speed");
-                                break outerSwitch;
-                            case 1:
-                                System.out.println("You try again.");
-                                break;
-                            default:
-                                System.out.println("Invalid choice. Please enter 1 to try again or 2 to run away.");
-                                break;
-                        }
                     }
-                }   break;
-            default:
-                System.out.println("Invalid choice. Please enter 1 to try again or 2 to run away.");
-                break;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please enter 1 to fight.");
+                    break;
+            }
         }
     }
 }

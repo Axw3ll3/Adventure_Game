@@ -53,6 +53,6 @@ public class Dog extends Monster {
                 It gasped, a wet, ragged sound, as it writhed on the floor. 
                 The growls turned into weak whimpers before finally going silent. 
                 The dog\'s body went limp, its chest rising and falling in short, shallow breaths before stopping altogether. 
-                """);
+                """, false);
         }
 }

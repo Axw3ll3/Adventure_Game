@@ -45,7 +45,7 @@ public class Zombie extends Monster {
             The door collides with the zombie\'s head, caving it in and effectively neutralizing the threat. 
             The creature falls limp, its body crumpling against the asphalt, blood pooling beneath it. 
             You step out of the car, breathless and adrenaline-fueled, scanning the lot for other zombies that may have been attracted by the noise. 
-            """);
+            """, true);
         
     } 
 }
