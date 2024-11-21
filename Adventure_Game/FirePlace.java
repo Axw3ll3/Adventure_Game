@@ -56,7 +56,7 @@ public class FirePlace {
         isLit = true;
         slowprint.slowPrintln("You've decided to lit the fire.", 2);
         player.reward("intelligence");
-        slowprint.slowPrintln("Unfortunally, you attracted spiders towards your position.", 2);
+        System.out.println("");
         Spider spider = new Spider();
         Combat combat = new Combat(player);
 

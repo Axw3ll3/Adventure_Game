@@ -68,10 +68,12 @@ public class Combat {
                     if (success) {
                         slowprint.slowPrintln(monster.getKilledByPlayer(), 3);
                         player.reward("strength");
+                        System.out.println("");
                         return;
                     } else {
                         if (player.getHealth() < 2) {
                             slowprint.slowPrintln(monster.getKillPlayer(), 3);
+                            System.out.println("");
                             player.setHealth();
                             menu.gameOver();
                             return;
@@ -79,6 +81,7 @@ public class Combat {
                         slowprint.slowPrintln(monster.getHitPlayer(), 3);
                         player.takeDamage(1);
                         System.out.println("Your current health: " + player.getHealth());
+                        System.out.println("");
                     }
                     break;
                 default:
