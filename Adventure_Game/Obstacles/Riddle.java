@@ -22,7 +22,8 @@ public class Riddle {
     }
 
     public void arrivalAtRiddle(){
-        slowprint.slowPrintln("After an epic battle with the rabiesdog - fearsome, rabid creatures that terrorized the whole hospital - you find yourself in an empty and quiet hospital. \n" +
+        slowprint.slowPrintln("After an epic battle with the rabiesdog - fearsome, rabid creatures that terrorized the whole hospital \n" +
+        "- you find yourself in an empty and quiet hospital. \n" +
 "You navigate through the dimly lit hallways. In the horizon you spot a door with a keypad who's got a display above it. \n" +
 "You run towards it, on the display it says: \n", 2);
         questionAndChoice();
