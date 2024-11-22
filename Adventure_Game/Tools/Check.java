@@ -1,4 +1,5 @@
-package Adventure_Game;
+package Adventure_Game.Tools;
+import Adventure_Game.Player.Player;
 import java.util.Scanner;
 
 public class Check {

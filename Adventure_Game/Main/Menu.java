@@ -1,4 +1,12 @@
-package Adventure_Game;
+package Adventure_Game.Main;
+import Adventure_Game.Environments.City;
+import Adventure_Game.Environments.Forest;
+import Adventure_Game.Environments.Hospital;
+import Adventure_Game.Environments.Mall;
+import Adventure_Game.Player.Player;
+import Adventure_Game.Tools.Check;
+import Adventure_Game.Tools.PlayerInput;
+import Adventure_Game.Tools.Slowprint;
 import java.util.Scanner;
 public class Menu {
 private Player player;
@@ -36,7 +44,7 @@ public void prologue(){
 "It is quiet, too quiet, except for the occasional sounds of something... Scraping? Or is it footsteps\n" +
 "amongst the leaves? It's cold outside, and you could really use some heat, but just the thought of\n" +
 "going into one of the houses gives you the creeps. You don't know what awaits you either way, but\n" +
-"maybe the forest at least could offer you some sort of shelter, away from the eerie city.\n\n" +
+"maybe the forest at least could offer you some sort of shelter, away from the eerie city.\n" +
 "Do you choose to [1] go to the city or [2] go into the forest? ", 1);
 }
 

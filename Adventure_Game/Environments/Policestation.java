@@ -1,4 +1,10 @@
-package Adventure_Game;
+package Adventure_Game.Environments;
+
+import Adventure_Game.Obstacles.Puzzle;
+import Adventure_Game.Player.Player;
+import Adventure_Game.Tools.Check;
+import Adventure_Game.Tools.PlayerInput;
+import Adventure_Game.Tools.Slowprint;
 
 public class Policestation {
     PlayerInput playerinput = new PlayerInput();

@@ -1,4 +1,8 @@
-package Adventure_Game;
+package Adventure_Game.Environments;
+
+import Adventure_Game.Main.Menu;
+import Adventure_Game.Obstacles.FirePlace;
+import Adventure_Game.Player.Player;
 
 public class Forest {
     public Forest(Player player){

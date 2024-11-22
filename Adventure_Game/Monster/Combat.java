@@ -1,4 +1,9 @@
-package Adventure_Game;
+package Adventure_Game.Monster;
+import Adventure_Game.Main.Menu;
+import Adventure_Game.Player.Player;
+import Adventure_Game.Tools.Check;
+import Adventure_Game.Tools.PlayerInput;
+import Adventure_Game.Tools.Slowprint;
 import java.util.Random;
 
 

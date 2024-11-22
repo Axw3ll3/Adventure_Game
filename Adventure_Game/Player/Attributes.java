@@ -1,4 +1,4 @@
-package Adventure_Game;
+package Adventure_Game.Player;
 
 public class Attributes {
     
