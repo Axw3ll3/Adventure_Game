@@ -115,8 +115,8 @@ public void gameOver(){
         menu.checkCorF();
         menu.prologueContinue();
         menu.choiceMorH();
-        Slowprint.slowPrintln("As you finally open the last door, you can barely believe your eyes. A helicopter! As you run\\n" + 
-      "for it and start the, thankfully still working, engine, you look down towards the city you are\\n" + 
+        Slowprint.slowPrintln("As you finally open the last door, you can barely believe your eyes. A helicopter! As you run\n" + 
+      "for it and start the, thankfully still working, engine, you look down towards the city you are\n" + 
       "about to leave behind, and you feel a great relief inside. You made it!", 2);
         System.out.println("");
         menu.gameOver();

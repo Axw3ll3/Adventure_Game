@@ -77,9 +77,8 @@ public class FirePlace {
         player.takeDamage(1);
         slowprint.slowPrintln("Due to you not putting up the fire, you've gotten cold and lost a health point.\n" + 
         "-1 Health point. You still have " + player.getHealth() + " left." ,2);
-        slowprint.slowPrintln("You've moved on without a scratch, though, which lets you move on to the next part of\\n" + //
-         "\" +\n" + //
-         "\"the story.", 2);
+        slowprint.slowPrintln("You've moved on without a scratch, though, which lets you move on to the next part of\\n" + 
+         "the story.", 2);
 
     }
     public void firePlaceSouvenir() {
