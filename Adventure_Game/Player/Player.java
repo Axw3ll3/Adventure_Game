@@ -1,5 +1,8 @@
-package Adventure_Game;
+package Adventure_Game.Player;
 import java.util.Scanner;
+
+import Adventure_Game.Player.Player.Attributes;
+import Adventure_Game.Player.Player.CharacterInfo;
 
 
 public class Player {

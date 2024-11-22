@@ -1,4 +1,12 @@
-package Adventure_Game;
+package Adventure_Game.Main;
+import Adventure_Game.Environments.City;
+import Adventure_Game.Environments.Forest;
+import Adventure_Game.Environments.Hospital;
+import Adventure_Game.Environments.Mall;
+import Adventure_Game.Player.Player;
+import Adventure_Game.Tools.Check;
+import Adventure_Game.Tools.PlayerInput;
+import Adventure_Game.Tools.Slowprint;
 import java.util.Scanner;
 public class Menu {
 private Player player;
@@ -25,7 +33,7 @@ public void startSkills(){
 
 public void prologue(){
     Slowprint.slowPrintln(player.getName()+" wake up in the middle of a road. You have no memory of how you got here. You are all alone",2);
-    Slowprint.slowPrintln("At your left you spot the buildings of what seems to have once been a small city full of life, with a police station, a hospital, and a mall, now completely abandoned. \nMost of what's left of the windows are now just holes, with broken glass on the street, as if someone has been in such a rush, they've just jumped right out of the window. The cars are parked in the middle of \nthe road, doors open, as if someone did not even have the time to close it. As you stand a bit away from the cars, it's hard to tell, but you can't help but see the spots on one of the car's back window. It really looks like...blood.\n\n" +
+    Slowprint.slowPrintln("At your left you spot the buildings of what seems to have once been a small city full of life, with a police station, a hospital, and a mall, now completely abandoned. \nMost of what's left of the windows are now just holes, with broken glass on the street, as if someone has been in such a rush, they've just jumped right out of the window. The cars are parked in the middle of the road, doors open, as if someone did not even have the time to close it. As you stand a bit away from the cars, it's hard to tell, but you can't help but see the spots on one of the car's back window. It really looks like...blood.\n\n" +
    "At your right you get a glimpse of the tall dark trees, barely visible as the mist slowly surrounds it. It is quiet, too quiet, except for the occasional sounds of something... Scraping? Or is it footsteps amongst the leaves? It's cold outside and you could really use some heat, but just the thought of going into one of the houses gives you the creeps. You don't know what awaits you in either way, but maybe the forest at least could offer you some sort of shelter, away from the eerie city.\n"
    + "\nDo you choose to [1] go to the city or [2] go into the forest? ", 1);
 }

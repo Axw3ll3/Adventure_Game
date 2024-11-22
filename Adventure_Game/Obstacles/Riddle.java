@@ -1,7 +1,12 @@
-package Adventure_Game;
+package Adventure_Game.Obstacles;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+
+import Adventure_Game.Player.Player;
+import Adventure_Game.Tools.Check;
+import Adventure_Game.Tools.PlayerInput;
+import Adventure_Game.Tools.Slowprint;
 
 public class Riddle {
     Random random = new Random();

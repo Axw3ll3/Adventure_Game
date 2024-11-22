@@ -1,4 +1,10 @@
-package Adventure_Game;
+package Adventure_Game.Environments;
+
+import Adventure_Game.Monster.BigRat;
+import Adventure_Game.Monster.Combat;
+import Adventure_Game.Monster.Ratpack;
+import Adventure_Game.Player.Player;
+import Adventure_Game.Tools.Slowprint;
 
 public class Mall {
     private Player player;

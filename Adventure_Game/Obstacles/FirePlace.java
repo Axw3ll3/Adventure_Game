@@ -1,8 +1,13 @@
-package Adventure_Game;
+package Adventure_Game.Obstacles;
 
+import Adventure_Game.Monster.Combat;
+import Adventure_Game.Monster.Spider;
+import Adventure_Game.Player.Player;
+import Adventure_Game.Tools.Check;
+import Adventure_Game.Tools.PlayerInput;
+import Adventure_Game.Tools.Slowprint;
 
 public class FirePlace {
-    //Glöm inte att ta bort slowprint.
     private boolean isLit;
     private Slowprint slowprint;
     private Player player;

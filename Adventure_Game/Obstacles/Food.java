@@ -1,8 +1,12 @@
-package Adventure_Game;
+package Adventure_Game.Obstacles;
+import Adventure_Game.Main.Menu;
+import Adventure_Game.Player.Player;
+import Adventure_Game.Tools.Check;
+import Adventure_Game.Tools.PlayerInput;
+import Adventure_Game.Tools.Slowprint;
 import java.util.Random;
 
 public class Food {
-    //Glöm inte ta bort Slowprint
     Random r = new Random();
     int random = r.nextInt(2);
     private Player player;

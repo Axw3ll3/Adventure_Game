@@ -1,4 +1,4 @@
-package Adventure_Game;
+package Adventure_Game.Tools;
 import java.util.Scanner;
 
 public class PlayerInput {

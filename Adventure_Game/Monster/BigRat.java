@@ -1,4 +1,4 @@
-package Adventure_Game;
+package Adventure_Game.Monster;
 
 public class BigRat extends Monster {
     public BigRat() {
