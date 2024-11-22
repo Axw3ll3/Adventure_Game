@@ -1,20 +1,19 @@
 package Adventure_Game.Monster;
 
-public abstract class Monster {
+public abstract class Monster implements isEscapable {
     private int monsterStrength;
     private String description;
     private String hitPlayer;
     private String killPlayer;
     private String killedByPlayer;
-    private boolean isEscapable;
 
-    public Monster(int monsterStrength, String description, String hitPlayer, String killPlayer, String killedByPlayer, boolean isEscapable){
+
+    public Monster(int monsterStrength, String description, String hitPlayer, String killPlayer, String killedByPlayer){
         this.monsterStrength = monsterStrength;
         this.description = description;
         this.killPlayer = killPlayer;
         this.hitPlayer = hitPlayer;
         this.killedByPlayer = killedByPlayer;
-        this.isEscapable = isEscapable;
     }
 
     public int getMonsterStrength() {
@@ -56,14 +55,6 @@ public abstract class Monster {
 
     public void setKilledByPlayer(String killedByPlayer) {
         this.killedByPlayer = killedByPlayer;
-    }
-
-    public Monster(boolean isEscapable) {
-        this.isEscapable = isEscapable;
-    }
-
-    public boolean isEscapable() {
-        return isEscapable;
     }
 }
   

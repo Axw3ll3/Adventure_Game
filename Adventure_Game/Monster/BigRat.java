@@ -1,6 +1,9 @@
 package Adventure_Game.Monster;
 
-public class BigRat extends Monster {
+public class BigRat extends Monster implements isEscapable {
+
+    
+
     public BigRat() {
         super(3, """
                 The leader of the pack is a truly monstrous rat, far larger than the rest, standing nearly three times their size. 
@@ -80,6 +83,12 @@ public class BigRat extends Monster {
                 With all the strength you can muster, you bring the bat down to the back of its neck. 
                 There\'s a crack as the blow connects, and the rat collapses, its legs giving out beneath it. 
                 Breathing heavily, you drop the bat and stagger back, the adrenaline still coursing through your veins. 
-                """, false);
+                """);
     }
+
+    @Override
+    public boolean isEscapable(){
+        return false;
+    }
+
 }

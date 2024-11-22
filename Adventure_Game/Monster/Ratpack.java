@@ -1,6 +1,6 @@
 package Adventure_Game.Monster;
 
-public class Ratpack extends Monster {
+public class Ratpack extends Monster implements isEscapable {
     public Ratpack() {
         super(2, """
                 A pack of rabid rats surges through the mall like a chaotic, writhing mass of fur, teeth, and claws. 
@@ -77,6 +77,11 @@ public class Ratpack extends Monster {
                 You take the chance to make a break for it, vaulting over the counter and rushing out of the store. 
                 You don't stop running, knowing that while you've dealt with the immediate threat, the mall is still crawling 
                 with danger. 
-                """, true);
+                """);
+    }
+
+    @Override
+    public boolean isEscapable() {
+        return true;
     }
 }

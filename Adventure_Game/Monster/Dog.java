@@ -1,6 +1,6 @@
 package Adventure_Game.Monster;
 
-public class Dog extends Monster {
+public class Dog extends Monster implements isEscapable {
     public Dog() {
         super(2, """
                 A big muscular canine, about three feet in height at the shoulder, with a broad chest and sturdy legs. 
@@ -62,6 +62,11 @@ public class Dog extends Monster {
                 It gasped, a wet, ragged sound, as it writhed on the floor. 
                 The growls turned into weak whimpers before finally going silent. 
                 The dog's body went limp, its chest rising and falling in short, shallow breaths before stopping altogether. 
-                """, false);
+                """);
+        }
+
+        @Override
+        public boolean isEscapable() {
+            return false;
         }
 }

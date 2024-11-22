@@ -1,6 +1,6 @@
 package Adventure_Game.Monster;
 
-public class Spider extends Monster {
+public class Spider extends Monster implements isEscapable {
     public Spider() {
         super(1, """
                 Even though you feel more at ease around your campfire. 
@@ -63,6 +63,11 @@ public class Spider extends Monster {
                 It thrashes wildly, trying to escape the fiery onslaught, but it's too late, the heat is overwhelming. 
                 You can see its flesh start to char as the fire bites into its side, causing it to screech in agony. 
                 Breathing heavily, you step back, watching as the once-formidable spider succumbs to the flames.
-                """, true);
+                """);
+    }
+
+    @Override
+    public boolean isEscapable() {
+        return true;
     }
 }

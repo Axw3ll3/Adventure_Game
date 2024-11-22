@@ -1,6 +1,6 @@
 package Adventure_Game.Monster;
 
-public class Zombie extends Monster {
+public class Zombie extends Monster implements isEscapable {
 
     public Zombie(){
         super(1,"""
@@ -57,7 +57,11 @@ public class Zombie extends Monster {
             The creature falls limp, its body crumpling against the asphalt, blood pooling beneath it. 
             You step out of the car, breathless and adrenaline-fueled, scanning the lot for other zombies 
             that may have been attracted by the noise. 
-            """, true);
-        
-    } 
+            """);
+           } 
+    
+    @Override
+    public boolean isEscapable() {
+    return true;
+    }
 }

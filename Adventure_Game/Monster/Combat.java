@@ -87,6 +87,8 @@ public class Combat {
                         player.takeDamage(1);
                         System.out.println("Your current health: " + player.getHealth());
                         System.out.println("");
+                        System.out.println("Would you like to try again or try to run away?");
+                        System.out.println("Press 1 to fight, or press 2 to try and run away");
                     }
                     break;
                 default:
