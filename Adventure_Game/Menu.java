@@ -24,18 +24,29 @@ public void startSkills(){
 }
 
 public void prologue(){
-    Slowprint.slowPrintln(player.getName()+" wake up in the middle of a road. You have no memory of how you got here. You are all alone",2);
-    Slowprint.slowPrintln("At your left you spot the buildings of what seems to have once been a small city full of life, with a police station, a hospital, and a mall, now completely abandoned. \nMost of what's left of the windows are now just holes, with broken glass on the street, as if someone has been in such a rush, they've just jumped right out of the window. The cars are parked in the middle of \nthe road, doors open, as if someone did not even have the time to close it. As you stand a bit away from the cars, it's hard to tell, but you can't help but see the spots on one of the car's back window. It really looks like...blood.\n\n" +
-   "At your right you get a glimpse of the tall dark trees, barely visible as the mist slowly surrounds it. It is quiet, too quiet, except for the occasional sounds of something... Scraping? Or is it footsteps amongst the leaves? It's cold outside and you could really use some heat, but just the thought of going into one of the houses gives you the creeps. You don't know what awaits you in either way, but maybe the forest at least could offer you some sort of shelter, away from the eerie city.\n"
-   + "\nDo you choose to [1] go to the city or [2] go into the forest? ", 1);
+    Slowprint.slowPrintln(player.getName()+" wake up in the middle of a road. You have no memory of how you got here. You are all alone.\n" +
+"At your left, you spot the buildings of what seems to have once been a small city full of life, with\n" +
+"a police station, a hospital, and a mall, now completely abandoned. Most of what's left of the\n" +
+"windows are now just holes, with broken glass on the street. It's as if someone has been in such a\n" +
+"rush, they've just jumped right out of the window. The cars are parked in the middle of the road,\n" +
+"doors open, as if someone did not even have the time to close them. As you stand a bit away from\n" +
+"the cars, it's hard to tell, but you can't help but see the spots on one of the car's back window.\n" +
+"It really looks like... blood.\n\n" +
+"At your right, you get a glimpse of the tall dark trees, barely visible as the mist slowly surrounds it.\n" +
+"It is quiet, too quiet, except for the occasional sounds of something... Scraping? Or is it footsteps\n" +
+"amongst the leaves? It's cold outside, and you could really use some heat, but just the thought of\n" +
+"going into one of the houses gives you the creeps. You don't know what awaits you either way, but\n" +
+"maybe the forest at least could offer you some sort of shelter, away from the eerie city.\n\n" +
+"Do you choose to [1] go to the city or [2] go into the forest? ", 1);
 }
 
 public void prologueContinue(){
-    Slowprint.slowPrintln("As you leave the policestation behind, you look around to the remaining houses. Besides the residentbuildings \n"
-    + "there are two buildings rising above the others. One looks like a mall and the other a hospital. Both could host even more \n "
-    + "gruesome creatures, but they could also contain a better chance to escape, or some sort of a lifeline.\n"
-    + "Which one would be the better choice? The mall [1] or the hospital [2]? \n"
-    + "Enter your choice...", 2);
+    Slowprint.slowPrintln("As you leave the policestation behind, you look around to the remaining houses. Besides the\n" +
+"residential buildings, there are two buildings rising above the others. One looks like a mall and\n" +
+"the other a hospital. Both could host even more gruesome creatures, but they could also contain a\n" +
+"better chance to escape, or some sort of a lifeline.\n\n" +
+"Which one would be the better choice? The mall [1] or the hospital [2]?\n" +
+"Enter your choice...", 2);
 }
 public boolean checkCorF(){
     Scanner s = new Scanner(System.in);
@@ -96,7 +107,11 @@ public void gameOver(){
         menu.checkCorF();
         menu.prologueContinue();
         menu.choiceMorH();
-        Slowprint.slowPrintln("As you finally open the last door you can barely believe your eyes. A helicopter! As you run for it an start the, thankfully still working, engine, you watch down towards the city you are about to leave behind, and you feel a great relief inside. You made it!", 2);
+        Slowprint.slowPrintln("As you finally open the last door, you can barely believe your eyes. A helicopter! As you run\\n" + //
+      "\" +\n" + //
+      "\"for it and start the, thankfully still working, engine, you look down towards the city you are\\n" + //
+      "\" +\n" + //
+      "\"about to leave behind, and you feel a great relief inside. You made it!", 2);
         System.out.println("");
         menu.gameOver();
 

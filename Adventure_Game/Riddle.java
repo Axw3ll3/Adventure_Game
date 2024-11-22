@@ -17,9 +17,9 @@ public class Riddle {
     }
 
     public void arrivalAtRiddle(){
-        slowprint.slowPrintln("After an epic battle with the rabiesdog - fearsome, rabid creatures that terrorized the whole hospital - you find yourself in an empty and quiet hospital. "
-        + "You navigate through the dimly lit hallways. In the horizon you spot a door with keypad whose got a display above it. "
-        + "\nYou run towards it, on the display it says:", 2);
+        slowprint.slowPrintln("After an epic battle with the rabiesdog - fearsome, rabid creatures that terrorized the whole hospital - you find yourself in an empty and quiet hospital. \n" +
+"You navigate through the dimly lit hallways. In the horizon you spot a door with a keypad who's got a display above it. \n" +
+"You run towards it, on the display it says: \n", 2);
         questionAndChoice();
 
     }

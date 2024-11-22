@@ -17,12 +17,14 @@ public class FirePlace {
     }
 
     public void arrivalAtFirePlace(){
-        slowprint.slowPrintln("The traveler emerged from the dense forest as dusk crept in, weary and cold. Through the trees, you spot a stone-ringed "
-         + "fireplace in a small clearing, untouched and waiting in the twilight.\nYou approach, noting the silence around it. "
-         + "No firewood was stacked, no sign of another soul - only the cold stones and the faint scent of old ashes.\nKneeling down "
-         + "you brushed your right hand over the stones, feeling a chill that ran deeper than the night air.\nYou hesitate, then decide to gather some kindling nearby, "
-         + "preparing to bring warmth back to this quiet, abandoned place.\nYou think twice, do I want to start a fire or not? "
-         + "\nWhat if I attract unwanted creatures towards me? Do you still want to lit the fireplace?", 2);
+        slowprint.slowPrintln("The traveler emerged from the dense forest as dusk crept in, weary and cold. Through the\n" +
+"trees, you spot a stone-ringed fireplace in a small clearing, untouched and waiting in the\n" +
+"twilight. You approach, noting the silence around it. No firewood was stacked, no sign of\n" +
+"another soul - only the cold stones and the faint scent of old ashes. Kneeling down, you\n" +
+"brush your right hand over the stones, feeling a chill that ran deeper than the night air.\n" +
+"You hesitate, then decide to gather some kindling nearby, preparing to bring warmth back to\n" +
+"this quiet, abandoned place. You think twice: Do I want to start a fire or not? What if I\n" +
+"attract unwanted creatures towards me? Do you still want to light the fireplace?", 2);
     }
 
     public void askToLit() {
@@ -68,8 +70,11 @@ public class FirePlace {
         isLit = false;
         slowprint.slowPrintln("You've decided to not lit the fire.", 2);
         player.takeDamage(1);
-        slowprint.slowPrintln("Due to you not putting up the fire, you've gotten cold and lost a healthpoint. " + "-1 Healthpoint, you still got "+player.getHealth()+ " left" ,2);
-        slowprint.slowPrintln("You've moved on without a scratch though, which let's you move on to the next part of the story", 2);
+        slowprint.slowPrintln("Due to you not putting up the fire, you've gotten cold and lost a health point.\n" + 
+        "-1 Health point. You still have " + player.getHealth() + " left." ,2);
+        slowprint.slowPrintln("You've moved on without a scratch, though, which lets you move on to the next part of\\n" + //
+         "\" +\n" + //
+         "\"the story.", 2);
 
     }
     public void firePlaceSouvenir() {

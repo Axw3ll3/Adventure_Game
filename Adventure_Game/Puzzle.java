@@ -24,7 +24,8 @@ public class Puzzle {
 
     public void arrivalAtPuzzle() {
         slowprint.slowPrintln("You stand alone in the dusty police station, facing an old filing cabinet. "
-        + "\nYou walk out of the office and out in the hallways. As you navigate through the dimly lit hallways, you find a room marked 'Survival'. " 
+        + "\nYou walk out of the office and out in the hallways. As you navigate through the dimly lit hallways,\n"
+        +" you find a room marked 'Survival'. " 
         + "\nInside, there is a large, rusted puzzle with a numeric combination. It reads:", 2);
         questionAndChoice();
     }
@@ -39,7 +40,8 @@ public class Puzzle {
 
 
     public void ifNotSolved(){
-        slowprint.slowPrintln("You couldn't come up with the answer to the puzzle (equation) and decide to leave the policestation due to you already exploring the whole place.", 2);
+        slowprint.slowPrintln("You couldn't come up with the answer to the puzzle (equation) and decide\n" + 
+                        "to leave the police station due to you already exploring the whole place.", 2);
     }
 
 
