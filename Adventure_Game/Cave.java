@@ -1,6 +1,8 @@
 package Adventure_Game;
-import java.util.Scanner;
 public class Cave {
+    PlayerInput playerinput = new PlayerInput();
+    Check check = new Check();
+
     public Cave(Player player){
         System.out.println("----------------------------------------------------------------");
         Slowprint.slowPrintln("Finally, after a long night, you come across an opening in a nearby mountainside.\n"
@@ -12,12 +14,8 @@ public class Cave {
 + "Do you still want to enter the cave [1] or not [2]?",2); }
 
 public boolean enteringCave(){
-Scanner s = new Scanner(System.in);
-int choiceCave = s.nextInt();
-    while (choiceCave != 1 && choiceCave != 2){ 
-        System.out.println("You have to enter a valid choice! Try again: ");
-        choiceCave = s.nextInt();
-    }
+    
+int choiceCave = check.checkYesNo(playerinput.getScanner());
     switch(choiceCave){
         case 1:
         Slowprint.slowPrintln("As you slowly walk up to the mouth of the cave. It is pitch black inside. Slowly, slowly you enter the cave.\n"

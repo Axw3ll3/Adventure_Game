@@ -4,6 +4,7 @@ public class Mall {
     private Player player;
     public Mall(Player player){
         System.out.println("----------------------------------------------------------------");
+        player.levelUp();
         Slowprint.slowPrintln("You enter through the big doors, facing the street. The dim lights inside tells you that there might atleast be electricity, however weak. Some of the small shops inside has been ransacked, while others just looks like a complete mess, clothes and articles laying all over the floors. Somewhere in the distant you hear what looks like a talking voice, almost like a radio. You decide to carefully walk towards the sound. Suddenly, a scream. No... multiple screams, from som sort of animal. In the dark you suddenly feel something crawling over your feet. You slowly look down. ",2);
         System.out.println("");
         Ratpack rats = new Ratpack();

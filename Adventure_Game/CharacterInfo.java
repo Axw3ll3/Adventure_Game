@@ -1,7 +1,5 @@
 package Adventure_Game;
 
-import java.util.Scanner;
-
 public class CharacterInfo {
 
     private String name;
@@ -12,7 +10,7 @@ public class CharacterInfo {
     public CharacterInfo(String name, int age) {
         this.name = name;
         this.age = age;
-        this.level = 1;
+        this.level = 0;
     }
 
     public String getName() {

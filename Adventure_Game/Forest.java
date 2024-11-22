@@ -3,6 +3,7 @@ package Adventure_Game;
 public class Forest {
     public Forest(Player player){
         System.out.println("----------------------------------------------------------------");
+        player.levelUp();
         FirePlace fireplace = new FirePlace(player);
             fireplace.arrivalAtFirePlace(); 
             fireplace.askToLit();

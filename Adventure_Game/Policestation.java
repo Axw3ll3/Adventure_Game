@@ -18,6 +18,7 @@ public class Policestation {
         
         switch(choicePorH){
         case 1:
+        player.levelUp();
         Puzzle puzzle = new Puzzle(player);
         puzzle.arrivalAtPuzzle();
         return true;
