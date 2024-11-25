@@ -71,19 +71,19 @@ public class Combat {
                 case 1:
                     boolean success = checkSuccess(getStrength, monster.getMonsterStrength());
                     if (success) {
-                        slowprint.slowPrintln(monster.getKilledByPlayer(), 3);
+                        slowprint.slowPrintln(monster.getKilledByPlayer());
                         player.reward("strength");
                         System.out.println("");
                         return;
                     } else {
                         if (player.getHealth() < 2) {
-                            slowprint.slowPrintln(monster.getKillPlayer(), 3);
+                            slowprint.slowPrintln(monster.getKillPlayer());
                             System.out.println("");
                             player.setHealth();
                             menu.gameOver();
                             return;
                         }
-                        slowprint.slowPrintln(monster.getHitPlayer(), 3);
+                        slowprint.slowPrintln(monster.getHitPlayer());
                         player.takeDamage(1);
                         System.out.println("Your current health: " + player.getHealth());
                         System.out.println("");

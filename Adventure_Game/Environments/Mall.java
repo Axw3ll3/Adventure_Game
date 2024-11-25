@@ -18,11 +18,11 @@ public class Mall {
                         "in the distant you hear what looks like a talking voice, almost like a radio.\n" + 
                         "You decide to carefully walk towards the sound. Suddenly, a scream. No...\n" + 
                         "multiple screams, from some sort of animal. In the dark you suddenly feel\n" + 
-                        "something crawling over your feet. You slowly look down.",2);
+                        "something crawling over your feet. You slowly look down.");
         System.out.println("");
         Ratpack rats = new Ratpack();
         Combat combat = new Combat(player);
-        Slowprint.slowPrintln(rats.getDescription(), 2); 
+        Slowprint.slowPrintln(rats.getDescription()); 
             combat.combat(player.getStrength(), player.getHealth(), rats);
         if(player.getIntelligence() < 3){
             Slowprint.slowPrintln("As you have finally escaped the pack of rats, you run for the door that leads\n" +
@@ -32,7 +32,7 @@ public class Mall {
                       "and cannot open the door. You hopelessly turn around, only to face something even bigger...");
             System.out.println("");
             BigRat bigrat = new BigRat();
-            Slowprint.slowPrintln(bigrat.getDescription(), 2); 
+            Slowprint.slowPrintln(bigrat.getDescription()); 
                 combat.combat(player.getStrength(), player.getHealth(), bigrat);
         }
         else {

@@ -1,12 +1,11 @@
 package Adventure_Game.Obstacles;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-
 import Adventure_Game.Player.Player;
 import Adventure_Game.Tools.Check;
 import Adventure_Game.Tools.PlayerInput;
 import Adventure_Game.Tools.Slowprint;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 public class Puzzle {
     Random random = new Random();
@@ -30,7 +29,7 @@ public class Puzzle {
         slowprint.slowPrintln("You stand alone in the dusty police station, facing an old filing cabinet. "
         + "\nYou walk out of the office and out in the hallways. As you navigate through the dimly lit hallways,\n"
         +" you find a room marked 'Survival'. " 
-        + "\nInside, there is a large, rusted puzzle with a numeric combination. It reads:", 2);
+        + "\nInside, there is a large, rusted puzzle with a numeric combination. It reads:");
         questionAndChoice();
     }
     
@@ -45,7 +44,7 @@ public class Puzzle {
 
     public void ifNotSolved(){
         slowprint.slowPrintln("You couldn't come up with the answer to the puzzle (equation) and decide\n" + 
-                        "to leave the police station due to you already exploring the whole place.", 2);
+                        "to leave the police station due to you already exploring the whole place.");
     }
 
 
@@ -98,7 +97,7 @@ public class Puzzle {
 
     public void puzzleSouvenir() {
         int choice;
-        slowprint.slowPrintln("Do you want to take a puzzle piece as a souvenir from the policestation?", 2);
+        slowprint.slowPrintln("Do you want to take a puzzle piece as a souvenir from the policestation?");
         while (true) {
             slowprint.slowPrintln("[1] Yes");
             slowprint.slowPrintln("[2] No");

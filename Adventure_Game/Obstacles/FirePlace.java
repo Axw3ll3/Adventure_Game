@@ -29,7 +29,7 @@ public class FirePlace {
 "brush your right hand over the stones, feeling a chill that ran deeper than the night air.\n" +
 "You hesitate, then decide to gather some kindling nearby, preparing to bring warmth back to\n" +
 "this quiet, abandoned place. You think twice: Do I want to start a fire or not? What if I\n" +
-"attract unwanted creatures towards me? Do you still want to light the fireplace?", 2);
+"attract unwanted creatures towards me? Do you still want to light the fireplace?");
     }
 
     public void askToLit() {
@@ -61,29 +61,29 @@ public class FirePlace {
 
     public void ifLit() {
         isLit = true;
-        slowprint.slowPrintln("You've decided to lit the fire.", 2);
+        slowprint.slowPrintln("You've decided to lit the fire.");
         player.reward("intelligence");
         System.out.println("");
         Spider spider = new Spider();
         Combat combat = new Combat(player);
 
-        slowprint.slowPrintln(spider.getDescription(), 2);
+        slowprint.slowPrintln(spider.getDescription());
         combat.combat(player.getStrength(), player.getHealth(), spider);
         firePlaceSouvenir();
     }
     public void ifNotLit() {
         isLit = false;
-        slowprint.slowPrintln("You've decided to not lit the fire.", 2);
+        slowprint.slowPrintln("You've decided to not lit the fire.");
         player.takeDamage(1);
         slowprint.slowPrintln("Due to you not putting up the fire, you've gotten cold and lost a health point.\n" + 
-        "-1 Health point. You still have " + player.getHealth() + " left." ,2);
+        "-1 Health point. You still have " + player.getHealth() + " left.");
         slowprint.slowPrintln("You've moved on without a scratch, though, which lets you move on to the next part of\\n" + 
-         "the story.", 2);
+         "the story.");
 
     }
     public void firePlaceSouvenir() {
         int choice;
-        slowprint.slowPrintln("Do you want to take a burnt wood as a souvenir from the fireplace?", 2);
+        slowprint.slowPrintln("Do you want to take a burnt wood as a souvenir from the fireplace?");
         while (true) {
             slowprint.slowPrintln("[1] Yes");
             slowprint.slowPrintln("[2] No");

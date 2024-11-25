@@ -12,7 +12,7 @@ public class City{
         System.out.println("----------------------------------------------------------------");
         player.levelUp();
         System.out.println("You've arrived to the city");
-        Slowprint.slowPrintln(zombie.getDescription(), 2);
+        Slowprint.slowPrintln(zombie.getDescription());
         combat.combat(player.getStrength(), player.getHealth(), zombie);
         System.out.println("");
         Policestation policestation = new Policestation(player);

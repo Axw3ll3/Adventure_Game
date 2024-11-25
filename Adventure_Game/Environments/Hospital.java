@@ -20,11 +20,11 @@ public class Hospital {
                         "to a door with an Exit sign. Maybe some sort of help could be available\n" + 
                         "if you just would make it there. As you have been walking a few feet, a\n" + 
                         "shadow passes by behind you. As your heart starts thundering, you turn\n" + 
-                        "around.",2);
+                        "around.");
         System.out.println("");
         Dog dog = new Dog();
         Combat combat = new Combat(player);
-        Slowprint.slowPrintln(dog.getDescription(), 2); 
+        Slowprint.slowPrintln(dog.getDescription()); 
             combat.combat(player.getStrength(), player.getHealth(), dog);
         Riddle riddle = new Riddle(player);
             riddle.arrivalAtRiddle();

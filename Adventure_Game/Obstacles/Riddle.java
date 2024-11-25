@@ -1,12 +1,11 @@
 package Adventure_Game.Obstacles;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-
 import Adventure_Game.Player.Player;
 import Adventure_Game.Tools.Check;
 import Adventure_Game.Tools.PlayerInput;
 import Adventure_Game.Tools.Slowprint;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 public class Riddle {
     Random random = new Random();
@@ -25,7 +24,7 @@ public class Riddle {
         slowprint.slowPrintln("After an epic battle with the rabiesdog - fearsome, rabid creatures that terrorized the whole hospital \n" +
         "- you find yourself in an empty and quiet hospital. \n" +
 "You navigate through the dimly lit hallways. In the horizon you spot a door with a keypad who's got a display above it. \n" +
-"You run towards it, on the display it says: \n", 2);
+"You run towards it, on the display it says: \n");
         questionAndChoice();
 
     }

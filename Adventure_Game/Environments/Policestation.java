@@ -18,7 +18,7 @@ public class Policestation {
         System.out.println("----------------------------------------------------------------");
         Slowprint.slowPrintln("The nearest building is the policestation. You make a run for it. \n"
         + "Perhaps inside you can find something useful. The curtains inside are blocking the windows, \n "
-        + " making the wole station seem... quiet.",2);
+        + " making the wole station seem... quiet.");
         System.out.println("Do you choose to stay at the policestation [1] or make a run for the next building [2]? ");
         choicePorH = check.checkYesNo(playerinput.getScanner());
         

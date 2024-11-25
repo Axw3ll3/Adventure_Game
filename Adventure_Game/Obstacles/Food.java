@@ -27,7 +27,7 @@ public class Food {
     slowprint.slowPrintln("\n" + 
                 "In the silent, dusty police station, you finally solve the puzzle. With a soft\n" + 
                 "click, a small hidden compartment opens up beneath your feet. Inside were a\n" + 
-                "few cans of beans. Do you want to eat the beans?", 2);
+                "few cans of beans. Do you want to eat the beans?");
 }
 
     //Menymetod
@@ -63,7 +63,7 @@ public class Food {
         if (random == 0) {
             player.takeDamage(1);
             slowprint.slowPrintln("The beans you found are old and made you get food poisoning, and \n " +
-            "this makes you lose -1 Healthpoint. You got " +player.getHealth()+ " left.",2 );
+            "this makes you lose -1 Healthpoint. You got " +player.getHealth()+ " left.");
             if (player.getHealth() == 0) {
                 menu.gameOver();
             }
@@ -73,7 +73,7 @@ public class Food {
         }
         else if (random == 1) {
             slowprint.slowPrintln("You've found yourself some fresh beans, which makes your strength go \n" +
-            "up by 1 due to you getting much needed energy.", 2);
+            "up by 1 due to you getting much needed energy.");
             player.reward("strength");
             foodSouvenir(player);
         }

@@ -24,11 +24,11 @@ public void start(){
 }
 
 public void startSkills(){
-    Slowprint.slowPrintln("Your current skills are: ",2); 
-    Slowprint.slowPrintln("Health: " + player.getHealth(),2);
-    Slowprint.slowPrintln("Strength: " + player.getStrength(),2 );
-    Slowprint.slowPrintln("Speed: " + player.getSpeed(),2);
-    Slowprint.slowPrintln("Intelligence: " + player.getIntelligence(),2);
+    Slowprint.slowPrintln("Your current skills are: "); 
+    Slowprint.slowPrintln("Health: " + player.getHealth());
+    Slowprint.slowPrintln("Strength: " + player.getStrength());
+    Slowprint.slowPrintln("Speed: " + player.getSpeed());
+    Slowprint.slowPrintln("Intelligence: " + player.getIntelligence());
 }
 
 public void prologue(){
@@ -45,7 +45,7 @@ public void prologue(){
 "amongst the leaves? It's cold outside, and you could really use some heat, but just the thought of\n" +
 "going into one of the houses gives you the creeps. You don't know what awaits you either way, but\n" +
 "maybe the forest at least could offer you some sort of shelter, away from the eerie city.\n" +
-"Do you choose to [1] go to the city or [2] go into the forest? ", 1);
+"Do you choose to [1] go to the city or [2] go into the forest? ");
 }
 
 public void prologueContinue(){
@@ -54,7 +54,7 @@ public void prologueContinue(){
 "the other a hospital. Both could host even more gruesome creatures, but they could also contain a\n" +
 "better chance to escape, or some sort of a lifeline.\n\n" +
 "Which one would be the better choice? The mall [1] or the hospital [2]?\n" +
-"Enter your choice...", 2);
+"Enter your choice...");
 }
 public boolean checkCorF(){
     Scanner s = new Scanner(System.in);
@@ -91,11 +91,11 @@ public boolean choiceMorH(){
 }
 
 public void gameOver(){
-    Slowprint.slowPrintln("-------------Results: -------------",2);
-    Slowprint.slowPrintln("Health: " +player.getHealth(), 2);
-    Slowprint.slowPrintln("Strength: "+player.getStrength(),2);
-    Slowprint.slowPrintln("Speed: "+ player.getSpeed(),2);
-    Slowprint.slowPrintln("Intelligence: "+ player.getIntelligence(),2);
+    Slowprint.slowPrintln("-------------Results: -------------");
+    Slowprint.slowPrintln("Health: " +player.getHealth());
+    Slowprint.slowPrintln("Strength: "+player.getStrength());
+    Slowprint.slowPrintln("Speed: "+ player.getSpeed());
+    Slowprint.slowPrintln("Intelligence: "+ player.getIntelligence());
     player.showBackpackItems();
     System.exit(0);
 }
@@ -108,7 +108,7 @@ public void gameOver(){
         player.setName(s);
         player.setAge(s);
         menu.startSkills();
-        Slowprint.slowPrintln("Press Enter to begin...",2);
+        Slowprint.slowPrintln("Press Enter to begin...");
         s.nextLine(); //Väntar tills user trycker på enter
         System.out.println("");
         menu.prologue();
@@ -117,7 +117,7 @@ public void gameOver(){
         menu.choiceMorH();
         Slowprint.slowPrintln("As you finally open the last door, you can barely believe your eyes. A helicopter! As you run\n" + 
       "for it and start the, thankfully still working, engine, you look down towards the city you are\n" + 
-      "about to leave behind, and you feel a great relief inside. You made it!", 2);
+      "about to leave behind, and you feel a great relief inside. You made it!");
         System.out.println("");
         menu.gameOver();
 
