@@ -1,9 +1,9 @@
-package Adventure_Game;
+package Adventure_Game.Tools;
 
 
 public class Slowprint {
     public static void slowPrintln(String text) {
-        slowPrintln(text, 50);
+        slowPrintln(text, 25);
     }
 
     public static void slowPrintln(String text, int ms){

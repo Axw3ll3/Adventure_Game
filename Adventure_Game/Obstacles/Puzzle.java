@@ -1,62 +1,53 @@
-package Adventure_Game;
+package Adventure_Game.Obstacles;
+import Adventure_Game.Player.Player;
+import Adventure_Game.Tools.Check;
+import Adventure_Game.Tools.PlayerInput;
+import Adventure_Game.Tools.Slowprint;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Puzzle {
-    //Glöm inte ta bort intelligence, scanner, slowprint och food sen.
-    int intelligence;
-    Scanner scanner = new Scanner(System.in);
     Random random = new Random();
-    Slowprint slowprint = new Slowprint();
-    Food food = new Food();
+    private Slowprint slowprint;
+    private Player player;
+    PlayerInput playerinput = new PlayerInput();
+    Check check = new Check();
+    Food food = new Food (player); 
 
 
 
-    public Puzzle() {
+
+    public Puzzle(Player player) {
+        this.food=food;
+        this.player=player;
+        this.check=check;
+        this.playerinput=playerinput;
     }
 
     public void arrivalAtPuzzle() {
         slowprint.slowPrintln("You stand alone in the dusty police station, facing an old filing cabinet. "
-        + "\nYou walk out of the office and out in the hallways. As you navigate through the dimly lit hallways, you find a room marked 'Survival'. " 
+        + "\nYou walk out of the office and out in the hallways. As you navigate through the dimly lit hallways,\n"
+        +" you find a room marked 'Survival'. " 
         + "\nInside, there is a large, rusted puzzle with a numeric combination. It reads:");
         questionAndChoice();
     }
     
     public void ifSolved(){
-        food.findingTheFood();
-        food.choiceOfEating();
+        System.out.println("You've got +1 intelligence due to solving the puzzle");
+        player.reward("intelligence");
+        puzzleSouvenir();
+        food.findingTheFood(player);
+        food.choiceOfEating(player);
     }
 
 
     public void ifNotSolved(){
-        slowprint.slowPrintln("You couldn't come up with the answer to the puzzle (equation) and decide to leave the policestation due to you already exploring the whole place.");
-        //Metod för val mellan sjukhus och köpcentrum
+        slowprint.slowPrintln("You couldn't come up with the answer to the puzzle (equation) and decide\n" + 
+                        "to leave the police station due to you already exploring the whole place.");
     }
 
-    public int checkChoice (Scanner scanner){
-    //Check av input så det är ett positivt nummer över 0
-        int number;
-        boolean firstrun = true;
-        do {
 
-            if(!firstrun) {slowprint.slowPrintln("Write a numberical option (1-4)!");}
-            while (!scanner.hasNextInt()) {
-                
-                slowprint.slowPrintln("Write a number!");
-                
-                scanner.next(); 
-                
-            }
-            
-            firstrun = false;
-            number = scanner.nextInt();
-        
-        } while (number < 1 || number > 4);
-        return number;
-        
-    }
 
     public void questionAndChoice() {
         for (int i = 0; i < 1; i++) {
@@ -73,14 +64,13 @@ public class Puzzle {
 
             //Hämtar användarens val och kollar om det är korrekt
             slowprint.slowPrintln("Enter your choice of answer on the keypad: ");
-            if (options.get(checkChoice(scanner) - 1) == correctAnswer) {
+            if (options.get(check.checkChoices(playerinput.getScanner()) - 1) == correctAnswer) {
                 ifSolved();
             } else {
                 ifNotSolved();    
             }
             System.out.println();
         }
-        scanner.close();
     }
 
     //Metod som räknar ut svar baserat på operator
@@ -104,5 +94,30 @@ public class Puzzle {
         Collections.shuffle(options);
         return options;
     }
+
+    public void puzzleSouvenir() {
+        int choice;
+        slowprint.slowPrintln("Do you want to take a puzzle piece as a souvenir from the policestation?");
+        while (true) {
+            slowprint.slowPrintln("[1] Yes");
+            slowprint.slowPrintln("[2] No");
+
+            // Kallar på metod för att se att input av användare är en integer
+           choice = check.checkYesNo(playerinput.getScanner());
+
+                switch (choice) {
+                    case 1:
+                        System.out.println("You've decided to take a puzzle piece as a souvenir");
+                        player.addItemToBackpack("Puzzle piece");
+                        player.showBackpackItems();
+                        break;
+                    case 2:
+                       System.out.println("You've decided to not pick up a souvenir from the policestation.");
+                        break;
+                
+                }
+                break;
+            } 
+        }
 
 }    
