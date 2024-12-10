@@ -56,7 +56,7 @@ public class Combat {
 
         while (player.getHealth() > 0) {
     
-            choice = check.checkYesNo(playerinput.getScanner());
+            choice = check.checkInput(playerinput.getScanner(), 1, 2);
     
             if (choice == 2 && canEscape) {
                 System.out.println("You run away!");
@@ -64,7 +64,7 @@ public class Combat {
                 break;
             } else if (choice == 2 && !canEscape) {
                 System.out.println("You can't run away! You must fight.");
-                choice = check.checkYesNo(playerinput.getScanner()); 
+                choice = check.checkInput(playerinput.getScanner(), 1, 2); 
             }
     
             switch (choice) {

@@ -41,7 +41,7 @@ public class FirePlace {
                     slowprint.slowPrintln("[2] No");
         
                     // Kallar på metod för att se att input av användare är en integer
-                   choice = check.checkYesNo(playerinput.getScanner());
+                   choice = check.checkInput(playerinput.getScanner(), 1, 2);
         
                         switch (choice) {
                             case 1:
@@ -89,8 +89,7 @@ public class FirePlace {
             slowprint.slowPrintln("[2] No");
 
             // Kallar på metod för att se att input av användare är en integer
-           choice = check.checkYesNo(playerinput.getScanner());
-
+           choice = check.checkInput(playerinput.getScanner(), 1, 2);
                 switch (choice) {
                     case 1:
                         System.out.println("You've decided to pick up burnt wood as a souvenir");

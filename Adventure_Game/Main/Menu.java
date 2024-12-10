@@ -58,7 +58,7 @@ public void prologueContinue(){
 }
 public boolean checkCorF(){
     Scanner s = new Scanner(System.in);
-    int choiceCorF = check.checkYesNo(playerinput.getScanner());
+    int choiceCorF = check.checkInput(playerinput.getScanner(), 1, 2);
     switch(choiceCorF){
         case 1:
         City ci = new City(player);
@@ -75,7 +75,7 @@ public boolean checkCorF(){
 }
 
 public boolean choiceMorH(){
-    int choiceMorH = check.checkYesNo(playerinput.getScanner());
+    int choiceMorH = check.checkInput(playerinput.getScanner(), 1, 2);
     switch(choiceMorH){
         case 1:
         Mall m = new Mall(player);

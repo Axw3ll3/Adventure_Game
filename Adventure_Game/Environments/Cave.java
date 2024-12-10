@@ -21,7 +21,7 @@ public class Cave {
 
 public boolean enteringCave(){
     
-int choiceCave = check.checkYesNo(playerinput.getScanner());
+int choiceCave = check.checkInput(playerinput.getScanner(), 1, 2);;
     switch(choiceCave){
         case 1:
         Slowprint.slowPrintln("As you slowly walk up to the mouth of the cave. It is pitch black inside. Slowly, slowly you enter the cave.\n"

@@ -20,7 +20,7 @@ public class Policestation {
         + "Perhaps inside you can find something useful. The curtains inside are blocking the windows, \n "
         + " making the wole station seem... quiet.");
         System.out.println("Do you choose to stay at the policestation [1] or make a run for the next building [2]? ");
-        choicePorH = check.checkYesNo(playerinput.getScanner());
+        choicePorH = check.checkInput(playerinput.getScanner(), 1, 2);
         
         switch(choicePorH){
         case 1:
