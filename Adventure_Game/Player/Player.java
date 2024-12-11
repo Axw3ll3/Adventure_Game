@@ -39,29 +39,31 @@ public class Player {
         boolean isValid = false;
        
         while (!isValid) {
-            System.out.println("Enter your age: ");
-            String inputAge = sc.nextLine();
-
-            //Kontroll om inmatningen endast innehåller siffror
-            if (!inputAge.matches("\\d+")) {
-                System.out.println("Error: Age must be entered with numbers only.");
-                continue;
+            try {
+                System.out.println("Enter your age: ");
+                String inputAge = sc.nextLine();
+    
+                // Kontroll om inmatningen endast innehåller siffror
+                if (!inputAge.matches("\\d+")) {
+                    System.out.println("Error: Age must be entered with numbers only.");
+                    continue;
+                }
+    
+                // Omvandlar inmatningen till ett heltal och sparar i age
+                int age = Integer.parseInt(inputAge);
+    
+                if (age < 15 || age > 120) {
+                    System.out.println("Error: Age must be between 15 and 120.");
+                } else {
+                    characterInfo.setAge(age);
+                    System.out.println("Your age has been registered.");
+                    isValid = true;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Invalid input format. Please enter a valid number.");
             }
-
-            //omvandlar inmatningen till heltal och sparar i age
-            int age = Integer.parseInt(inputAge);
-
-        
-            if (age < 15 || age > 120) {
-                System.out.println("Error: Age must be between 15 and 120.");
-            } else {
-                characterInfo.setAge(age);
-                System.out.println("Your age has been registered.");
-                isValid = true;
-
-            }
-         }
-     }
+        }
+    }
 
     public void reward(String choice) {
         switch (choice.toLowerCase()) {
