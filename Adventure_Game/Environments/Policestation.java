@@ -14,7 +14,7 @@ public class Policestation {
         this.playerinput=playerinput;
         this.check=check;
     }
-    public boolean ifPolicestation(Player player){
+    public boolean ifChoicePolicestation(Player player){
         System.out.println("----------------------------------------------------------------");
         Slowprint.slowPrintln("The nearest building is the policestation. You make a run for it. \n"
         + "Perhaps inside you can find something useful. The curtains inside are blocking the windows, \n "

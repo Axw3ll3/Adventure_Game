@@ -16,7 +16,7 @@ public class City{
         combat.combat(player.getStrength(), player.getHealth(), zombie);
         System.out.println("");
         Policestation policestation = new Policestation(player);
-            policestation.ifPolicestation(player);
+            policestation.ifChoicePolicestation(player);
 
     }    
 }

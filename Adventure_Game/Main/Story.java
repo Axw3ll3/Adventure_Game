@@ -1,5 +1,9 @@
 package Adventure_Game.Main;
+import Adventure_Game.Player.Player;
+import Adventure_Game.Tools.Slowprint;
 public class Story {
+    private Player player;
+
     public Story(Player player){
         this.player = player;
     }
