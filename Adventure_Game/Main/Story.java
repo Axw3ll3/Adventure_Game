@@ -7,6 +7,12 @@ public class Story {
     public Story(Player player){
         this.player = player;
     }
+    public void start(){
+        System.out.println("WELCOME TO THE ADVENTUREGAME BY VELVETVIBE");
+        System.out.println("------------------------------------------");
+        System.out.println("First we are going to start by creating your character");
+    }
+
         public void prologue(){
             Slowprint.slowPrintln(player.getName()+" wake up in the middle of a road. You have no memory of how you got here. You are all alone.\n" +
             "At your left, you spot the buildings of what seems to have once been a small city full of life, with\n" +

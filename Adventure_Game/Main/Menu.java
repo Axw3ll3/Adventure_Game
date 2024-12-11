@@ -17,12 +17,6 @@ public Menu(Player player){
     this.player = player;
 
 }
-public void start(){
-    System.out.println("WELCOME TO THE ADVENTUREGAME BY VELVETVIBE");
-    System.out.println("------------------------------------------");
-    System.out.println("First we are going to start by creating your character");
-}
-
 public void startSkills(){
     Slowprint.slowPrintln("Your current skills are: "); 
     Slowprint.slowPrintln("Health: " + player.getHealth());
@@ -79,14 +73,14 @@ public void gameOver(){
         Scanner s = new Scanner(System.in);
         Player player = new Player("Default name", 17 ,3, 3 , 0, 0, 0);
         Menu menu = new Menu(player);
-        menu.start();
+        Story story = new Story(player);
+        story.start();
         player.setName(s);
         player.setAge(s);
         menu.startSkills();
         Slowprint.slowPrintln("Press Enter to begin...");
         s.nextLine(); //Väntar tills user trycker på enter
         System.out.println("");
-        Story story = new Story(player);
         story.prologue();
         menu.checkCityOrForest();
         story.prologueContinue();
@@ -96,12 +90,6 @@ public void gameOver(){
       "about to leave behind, and you feel a great relief inside. You made it!");
         System.out.println("");
         menu.gameOver();
-
-
-
-
-
-
 
 s.close();
     }
