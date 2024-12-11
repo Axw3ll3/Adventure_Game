@@ -31,10 +31,10 @@ public void startSkills(){
     Slowprint.slowPrintln("Intelligence: " + player.getIntelligence());
 }
 
-public boolean checkCityorForest(){
+public boolean checkCityOrForest(){
     Scanner s = new Scanner(System.in);
-    int choiceCorF = check.checkInput(playerinput.getScanner(), 1, 2);
-    switch(choiceCorF){
+    int choiceCityOrForest = check.checkInput(playerinput.getScanner(), 1, 2);
+    switch(choiceCityOrForest){
         case 1:
         City ci = new City(player);
         System.out.println();
@@ -49,9 +49,9 @@ public boolean checkCityorForest(){
     return false;
 }
 
-public boolean choiceMallorHospital(){
-    int choiceMorH = check.checkInput(playerinput.getScanner(), 1, 2);
-    switch(choiceMorH){
+public boolean checkMallOrHospital(){
+    int choiceMallOrHospital = check.checkInput(playerinput.getScanner(), 1, 2);
+    switch(choiceMallOrHospital){
         case 1:
         Mall m = new Mall(player);
         System.out.println();
@@ -79,7 +79,6 @@ public void gameOver(){
         Scanner s = new Scanner(System.in);
         Player player = new Player("Default name", 17 ,3, 3 , 0, 0, 0);
         Menu menu = new Menu(player);
-        Story story = new Story(Player player);
         menu.start();
         player.setName(s);
         player.setAge(s);
@@ -87,10 +86,11 @@ public void gameOver(){
         Slowprint.slowPrintln("Press Enter to begin...");
         s.nextLine(); //Väntar tills user trycker på enter
         System.out.println("");
-        menu.prologue();
-        menu.checkCityorForest();
-        menu.prologueContinue();
-        menu.choiceMallorHospital();
+        Story story = new Story(player);
+        story.prologue();
+        menu.checkCityOrForest();
+        story.prologueContinue();
+        menu.checkMallOrHospital();
         Slowprint.slowPrintln("As you finally open the last door, you can barely believe your eyes. A helicopter! As you run\n" + 
       "for it and start the, thankfully still working, engine, you look down towards the city you are\n" + 
       "about to leave behind, and you feel a great relief inside. You made it!");
