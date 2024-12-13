@@ -64,7 +64,7 @@ public class Puzzle {
 
             //Hämtar användarens val och kollar om det är korrekt
             slowprint.slowPrintln("Enter your choice of answer on the keypad: ");
-            if (options.get(check.checkChoices(playerinput.getScanner()) - 1) == correctAnswer) {
+            if (options.get(check.checkInput(playerinput.getScanner(), 1, 4) - 1) == correctAnswer) {
                 ifSolved();
             } else {
                 ifNotSolved();    
@@ -103,7 +103,7 @@ public class Puzzle {
             slowprint.slowPrintln("[2] No");
 
             // Kallar på metod för att se att input av användare är en integer
-           choice = check.checkYesNo(playerinput.getScanner());
+           choice = check.checkInput(playerinput.getScanner(), 1, 2);
 
                 switch (choice) {
                     case 1:

@@ -41,7 +41,7 @@ public class FirePlace {
                     slowprint.slowPrintln("[2] No");
         
                     // Kallar på metod för att se att input av användare är en integer
-                   choice = check.checkYesNo(playerinput.getScanner());
+                   choice = check.checkInput(playerinput.getScanner(), 1, 2);
         
                         switch (choice) {
                             case 1:
@@ -77,7 +77,7 @@ public class FirePlace {
         player.takeDamage(1);
         slowprint.slowPrintln("Due to you not putting up the fire, you've gotten cold and lost a health point.\n" + 
         "-1 Health point. You still have " + player.getHealth() + " left.");
-        slowprint.slowPrintln("You've moved on without a scratch, though, which lets you move on to the next part of\\n" + 
+        slowprint.slowPrintln("You've moved on without a scratch, though, which lets you move on to the next part of\n" + 
          "the story.");
 
     }
@@ -89,8 +89,7 @@ public class FirePlace {
             slowprint.slowPrintln("[2] No");
 
             // Kallar på metod för att se att input av användare är en integer
-           choice = check.checkYesNo(playerinput.getScanner());
-
+           choice = check.checkInput(playerinput.getScanner(), 1, 2);
                 switch (choice) {
                     case 1:
                         System.out.println("You've decided to pick up burnt wood as a souvenir");
